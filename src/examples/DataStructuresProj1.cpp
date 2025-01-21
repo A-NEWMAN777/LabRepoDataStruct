@@ -2,21 +2,52 @@
 //
 
 #include <iostream>
-#include <person.h>
+#include "person.h"
 #include <string.h>
+#include <string> // The C++ string class library
+using namespace std; // makes the std:: stuff optional
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    size_t x = 42;
+    double z = 3.14;
+    float y = 3.14f;
+    char name[32] = "Bob James"; //C-style (a changeable string array)
+    const char* name2 = "Sally Smith"; //C-style (an unchangeable string literal)
+    strcpy_s(name, "Robert Jones");
+    x = strlen(name); // 12
+    if (strcmp(name, "mmmm") < 0)
+        printf("name is alphabetically less than mmm");
+    
+    std::string cpp_name = "Bob Jones"; //internally, the # of chars is still important
+    x = cpp_name.length();
+    if (cpp_name < "mmmm")
+        cout << "cpp_name is alphabetically less than mmm";
+    name2 = cpp_name.c_str();
+
+    //Our goal will be to make structures like this
+    //that will simplify the job of the user.
+
+
+    cout << "x=" << x << "abc" << "Hello World!\n";
+
+    Person p;
+    Person q;
+
+    p.id = 42;
+    q.id = 43;
+    p.first_name = "Bob";
+    q.first_name = "Sally";
+
+    std::cout << p.id << " " << p.first_name;
+
+    
+
+    cin >> x; //waiting fot the user to enter a value for x
+
+
+
+    
+    
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
