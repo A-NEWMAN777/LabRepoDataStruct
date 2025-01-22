@@ -1,53 +1,59 @@
-// DataStructuresProj1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+#include <person.h>
 #include <iostream>
-#include "person.h"
-#include <string.h>
-#include <string> // The C++ string class library
-using namespace std; // makes the std:: stuff optional
+#include <string>
 
-int main()
+void func()
 {
-    size_t x = 42;
-    double z = 3.14;
-    float y = 3.14f;
-    char name[32] = "Bob James"; //C-style (a changeable string array)
-    const char* name2 = "Sally Smith"; //C-style (an unchangeable string literal)
-    strcpy_s(name, "Robert Jones");
-    x = strlen(name); // 12
-    if (strcmp(name, "mmmm") < 0)
-        printf("name is alphabetically less than mmm");
-    
-    std::string cpp_name = "Bob Jones"; //internally, the # of chars is still important
-    x = cpp_name.length();
-    if (cpp_name < "mmmm")
-        cout << "cpp_name is alphabetically less than mmm";
-    name2 = cpp_name.c_str();
-
-    //Our goal will be to make structures like this
-    //that will simplify the job of the user.
-
-
-    cout << "x=" << x << "abc" << "Hello World!\n";
-
-    Person p;
-    Person q;
-
-    p.id = 42;
-    q.id = 43;
-    p.first_name = "Bob";
-    q.first_name = "Sally";
-
-    std::cout << p.id << " " << p.first_name;
-
-    
-
-    cin >> x; //waiting fot the user to enter a value for x
-
-
-
-    
-    
+	Person a(45, "Sally", "Smith");
+	std::cout << "Doing something...\n";
 }
 
+int main(int argc, char** argv)
+{
+	// Making two instances (or object) of the Person class
+	Person p(42, "Bob", "Jones");		// using the "real" constructor
+	Person q;							// using the default constructor
+
+	//p.id = 42;
+	//p.hours_worked = 17;
+	//p.hourly_rate = 13.5f;
+	p.set_hourly_rate(13.5f);
+	p.set_hours_worked(17);
+
+	func();
+
+	Person* pptr;                      // Declaring a pointer to a Person (NOT A PERSON!!!)
+	//    uninitialized at the moment;
+	pptr = NULL;				// NULL is a macro (the value 0)
+	int x = NULL;               // Assigning the VALUE 0 to x (x is NOT a pointer)
+	pptr = nullptr;				// Like NULL but can only be assigned to pointer types
+	//x = nullptr;				// Error because x is not a pointer
+
+	pptr = new Person(46, "Jim", "Price");   // new is like malloc in that it dynamically allocates
+	// memory from the HEAP.  Returns a pointer to a Person.
+	// malloc doesn't do anything with constructors or destructors
+
+// Examples of DE-REFERENCING the pointer
+	pptr->set_hourly_rate(11.3f);
+	(*pptr).set_hourly_rate(11.3f);			// Same as line before.
+	std::cout << "Doing some more stuff with the Person pointed to by pptr\n";
+	// Free up that Person object
+	delete pptr;							// Freeing the memory pointed to by pptr.  pptr's still 
+	//   holding the same address (DANGLING-POINTER) -- don't 
+	//   use that address or bad things will happen.  Calling
+	//   delete causes the destructor to get run AND then
+	//   the memory is freed up.
+	pptr = nullptr;
+
+	// Make a new person using pptr
+	pptr = new Person(47, "Julia", "Young");
+	pptr->set_hourly_rate(14.5f);
+	delete pptr;							// This calls the Destructor, then frees up this chunk
+	//   of memory pointed to by pptr.
+
+
+	std::cout << "The pay for p is " << p.calculate_pay() << "\n";
+	std::cout << "The pay for q is " << q.calculate_pay() << "\n";
+
+	return 0;
+}

@@ -87,7 +87,7 @@
     <ClInclude Include="..\include\examples\person.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\examples\DataStructuresProj1.cpp" />
+    <ClCompile Include="..\include\examples\stream_example.cpp" />
     <ClCompile Include="..\src\examples\person.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
