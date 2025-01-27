@@ -1,83 +1,54 @@
-// person.cpp -- houses the BODIES (DEFINITIONS) of all methods
-#include <person.h>
+#include "person.h"
 #include <iostream>
 
-// General structure:     ReturnType ClassName::MethodName(PARAMETERS) { .... }
+// Default constructor
+Person::Person() : id(-1), first_name("?"), last_name("?"), hourly_rate(0.0f), hours_worked(0) {}
 
-float Person::calculate_pay()
-{
-	// We have access to all attributes since we're a part of the class
-	return hourly_rate * hours_worked;
+// Parameterized constructor
+Person::Person(int starting_id, std::string start_fname, std::string start_lname)
+    : id(starting_id), first_name(start_fname), last_name(start_lname), hourly_rate(0.0f), hours_worked(0) {
 }
 
-
-void Person::set_hourly_rate(float new_rate)
-{
-	// Imagine that we COULD do data validation rules to make sure new_rate
-	// makes sense (according to company policy) before assigning it.  
-	// We can also set breakpoints here to DETECT any time a change is made
-	hourly_rate = new_rate;
+// Destructor
+Person::~Person() {
+    std::cout << "Person '" << first_name << " " << last_name << "' is about to die!\n";
 }
 
-
-void Person::set_hours_worked(unsigned int new_hours)
-{
-	hours_worked = new_hours;
+// Getter methods (const for const-correctness)
+int Person::get_id() const {
+    return id;
 }
 
-
-
-int Person::get_id()
-{
-	return id;
+std::string Person::get_first_name() const {
+    return first_name;
 }
 
-
-std::string Person::get_first_name()
-{
-	return first_name;
+std::string Person::get_last_name() const {
+    return last_name;
 }
 
-
-std::string Person::get_last_name()
-{
-	return last_name;
+float Person::get_hourly_rate() const {
+    return hourly_rate;
 }
 
-
-float Person::get_hourly_rate()
-{
-	return hourly_rate;
+unsigned int Person::get_hours_worked() const {
+    return hours_worked;
 }
 
-
-unsigned int Person::get_hours_worked()
-{
-	return hours_worked;
+// Setter methods
+void Person::set_hourly_rate(float new_rate) {
+    if (new_rate < 0 || new_rate > 1000)
+    {
+        throw std::runtime_error("Invalid Rate of $" + std::to_string(new_rate));
+    }
+    hourly_rate = new_rate;
 }
 
-
-Person::Person()
-{
-	id = -1;
-	first_name = "?";
-	last_name = "?";
-	hours_worked = 0;
-	hourly_rate = 0.0f;
+void Person::set_hours_worked(unsigned int new_hours) {
+    hours_worked = new_hours;
 }
 
-
-Person::Person(int start_id, std::string start_fname, std::string start_lname)
-{
-	id = start_id;
-	first_name = start_fname;
-	last_name = start_lname;
-	hours_worked = 0;
-	hourly_rate = 0.0f;
-}
-
-
-Person::~Person()
-{
-	std::cout << "The person named " << first_name << " " << last_name << " is about to go away.\n";
+// Calculate wage (const method)
+float Person::calculate_wage() const {
+    return hourly_rate * hours_worked;
 }
