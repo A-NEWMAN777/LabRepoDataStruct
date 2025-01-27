@@ -100,23 +100,26 @@ namespace example {
         float total_salary = 0.0f;
 
         oss << "Person Database\n";
-        oss << "============================================================\n";
+        oss << "==============================================================================================================\n"
+            << "==============================================================================================================\n";
 
 
         for (int i = 0; i < num_people; ++i) {
             const Person& person = people[i];
             float wage = person.calculate_wage();
             total_salary += wage;
-            oss << " ||ID|| " << person.get_id()
-                << " ||First Name|| " << person.get_first_name() 
-                << " ||Last Name|| " << person.get_last_name() 
-                << " ||Hours Worked|| " << person.get_hours_worked() <<"hrs" 
-                << " ||Hourly Rate|| " << person.get_hourly_rate() <<"$/hr" << " "
-                << " ||Wage|| $" << wage << "\n\n";
+            oss << "||ID||=||First Name||=||Last Name||=||Hours Worked||=||Hourly Rate||====||Wage||\n  " << person.get_id()
+                << "   \t "<< person.get_first_name() 
+                << "\t\t" << person.get_last_name() 
+                << "\t" << person.get_hours_worked() <<"hrs" 
+                << "\t\t" << person.get_hourly_rate() <<"$/hr"
+                << "\t$" << wage << "\n\n";
         }
 
-        oss << "============================================================\n" << "Total: $" << total_salary << "\n";
+        oss << "===============================================================================================================\n"
+            << "===============================================================================================================\n" << "Total: $" << total_salary << "\n";
         return oss.str();
     }
+    
 
 } // namespace example
