@@ -108,37 +108,215 @@ $(function(){initNavTree('class_person.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Person Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class for a single person object that contains a person's ID, First Name, Last Name, hourly rate, and hours worked. Contains Getter methods for ID, first and last name, hours worked, and hourly rate. Contains Setter methods for hours worked and hourly rate. Contains a method to calculate the wage of the person.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="person_8h_source.html">person.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a85bd72ea8cb506c917b99a4c50039340" id="r_a85bd72ea8cb506c917b99a4c50039340"><td class="memItemLeft" align="right" valign="top"><a id="a85bd72ea8cb506c917b99a4c50039340" name="a85bd72ea8cb506c917b99a4c50039340"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Person</b> (int starting_id, std::string start_fname, std::string start_lname)</td></tr>
 <tr class="separator:a85bd72ea8cb506c917b99a4c50039340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b2385898525aa5f9a4e9396fabadb47" id="r_a7b2385898525aa5f9a4e9396fabadb47"><td class="memItemLeft" align="right" valign="top"><a id="a7b2385898525aa5f9a4e9396fabadb47" name="a7b2385898525aa5f9a4e9396fabadb47"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_id</b> () const</td></tr>
+<tr class="memitem:a7b2385898525aa5f9a4e9396fabadb47" id="r_a7b2385898525aa5f9a4e9396fabadb47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b2385898525aa5f9a4e9396fabadb47">get_id</a> () const</td></tr>
+<tr class="memdesc:a7b2385898525aa5f9a4e9396fabadb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for ID.  <br /></td></tr>
 <tr class="separator:a7b2385898525aa5f9a4e9396fabadb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af901070b7e0214ae87c31c6d7a1098fe" id="r_af901070b7e0214ae87c31c6d7a1098fe"><td class="memItemLeft" align="right" valign="top"><a id="af901070b7e0214ae87c31c6d7a1098fe" name="af901070b7e0214ae87c31c6d7a1098fe"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_first_name</b> () const</td></tr>
+<tr class="memitem:af901070b7e0214ae87c31c6d7a1098fe" id="r_af901070b7e0214ae87c31c6d7a1098fe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af901070b7e0214ae87c31c6d7a1098fe">get_first_name</a> () const</td></tr>
+<tr class="memdesc:af901070b7e0214ae87c31c6d7a1098fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for first name.  <br /></td></tr>
 <tr class="separator:af901070b7e0214ae87c31c6d7a1098fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac45e93a34c52e5adaeff6efe5436081" id="r_aac45e93a34c52e5adaeff6efe5436081"><td class="memItemLeft" align="right" valign="top"><a id="aac45e93a34c52e5adaeff6efe5436081" name="aac45e93a34c52e5adaeff6efe5436081"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_name</b> () const</td></tr>
+<tr class="memitem:aac45e93a34c52e5adaeff6efe5436081" id="r_aac45e93a34c52e5adaeff6efe5436081"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac45e93a34c52e5adaeff6efe5436081">get_last_name</a> () const</td></tr>
+<tr class="memdesc:aac45e93a34c52e5adaeff6efe5436081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for last name.  <br /></td></tr>
 <tr class="separator:aac45e93a34c52e5adaeff6efe5436081"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac669f7098eade309ce0de6bff6666324" id="r_ac669f7098eade309ce0de6bff6666324"><td class="memItemLeft" align="right" valign="top"><a id="ac669f7098eade309ce0de6bff6666324" name="ac669f7098eade309ce0de6bff6666324"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>get_hourly_rate</b> () const</td></tr>
+<tr class="memitem:ac669f7098eade309ce0de6bff6666324" id="r_ac669f7098eade309ce0de6bff6666324"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac669f7098eade309ce0de6bff6666324">get_hourly_rate</a> () const</td></tr>
+<tr class="memdesc:ac669f7098eade309ce0de6bff6666324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for hourly rate.  <br /></td></tr>
 <tr class="separator:ac669f7098eade309ce0de6bff6666324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a420bda3ef16a393c54fc988ff4c1e8c2" id="r_a420bda3ef16a393c54fc988ff4c1e8c2"><td class="memItemLeft" align="right" valign="top"><a id="a420bda3ef16a393c54fc988ff4c1e8c2" name="a420bda3ef16a393c54fc988ff4c1e8c2"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>get_hours_worked</b> () const</td></tr>
+<tr class="memitem:a420bda3ef16a393c54fc988ff4c1e8c2" id="r_a420bda3ef16a393c54fc988ff4c1e8c2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a420bda3ef16a393c54fc988ff4c1e8c2">get_hours_worked</a> () const</td></tr>
+<tr class="memdesc:a420bda3ef16a393c54fc988ff4c1e8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for hours worked.  <br /></td></tr>
 <tr class="separator:a420bda3ef16a393c54fc988ff4c1e8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f3b79fba3ce2269d80228c5bbb713c9" id="r_a5f3b79fba3ce2269d80228c5bbb713c9"><td class="memItemLeft" align="right" valign="top"><a id="a5f3b79fba3ce2269d80228c5bbb713c9" name="a5f3b79fba3ce2269d80228c5bbb713c9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_hourly_rate</b> (float new_rate)</td></tr>
+<tr class="memitem:a5f3b79fba3ce2269d80228c5bbb713c9" id="r_a5f3b79fba3ce2269d80228c5bbb713c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f3b79fba3ce2269d80228c5bbb713c9">set_hourly_rate</a> (float new_rate)</td></tr>
+<tr class="memdesc:a5f3b79fba3ce2269d80228c5bbb713c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter method for hourly rate; requires new rate as parameter.  <br /></td></tr>
 <tr class="separator:a5f3b79fba3ce2269d80228c5bbb713c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad082db4751e584833f0256de52199ce" id="r_aad082db4751e584833f0256de52199ce"><td class="memItemLeft" align="right" valign="top"><a id="aad082db4751e584833f0256de52199ce" name="aad082db4751e584833f0256de52199ce"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_hours_worked</b> (unsigned int new_hours)</td></tr>
+<tr class="memitem:aad082db4751e584833f0256de52199ce" id="r_aad082db4751e584833f0256de52199ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad082db4751e584833f0256de52199ce">set_hours_worked</a> (unsigned int new_hours)</td></tr>
+<tr class="memdesc:aad082db4751e584833f0256de52199ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter method for hours worked; required new hours as parameter.  <br /></td></tr>
 <tr class="separator:aad082db4751e584833f0256de52199ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abda868aa627e39cd420468dfe2cc775d" id="r_abda868aa627e39cd420468dfe2cc775d"><td class="memItemLeft" align="right" valign="top"><a id="abda868aa627e39cd420468dfe2cc775d" name="abda868aa627e39cd420468dfe2cc775d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>calculate_wage</b> () const</td></tr>
+<tr class="memitem:abda868aa627e39cd420468dfe2cc775d" id="r_abda868aa627e39cd420468dfe2cc775d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda868aa627e39cd420468dfe2cc775d">calculate_wage</a> () const</td></tr>
+<tr class="memdesc:abda868aa627e39cd420468dfe2cc775d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple method that calculates the wage of a person by multplying their hours worked by their hourly rate.  <br /></td></tr>
 <tr class="separator:abda868aa627e39cd420468dfe2cc775d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for a single person object that contains a person's ID, First Name, Last Name, hourly rate, and hours worked. Contains Getter methods for ID, first and last name, hours worked, and hourly rate. Contains Setter methods for hours worked and hourly rate. Contains a method to calculate the wage of the person. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="abda868aa627e39cd420468dfe2cc775d" name="abda868aa627e39cd420468dfe2cc775d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abda868aa627e39cd420468dfe2cc775d">&#9670;&#160;</a></span>calculate_wage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Person::calculate_wage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simple method that calculates the wage of a person by multplying their hours worked by their hourly rate. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="af901070b7e0214ae87c31c6d7a1098fe" name="af901070b7e0214ae87c31c6d7a1098fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af901070b7e0214ae87c31c6d7a1098fe">&#9670;&#160;</a></span>get_first_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Person::get_first_name </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter method for first name. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ac669f7098eade309ce0de6bff6666324" name="ac669f7098eade309ce0de6bff6666324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac669f7098eade309ce0de6bff6666324">&#9670;&#160;</a></span>get_hourly_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Person::get_hourly_rate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter method for hourly rate. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a420bda3ef16a393c54fc988ff4c1e8c2" name="a420bda3ef16a393c54fc988ff4c1e8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420bda3ef16a393c54fc988ff4c1e8c2">&#9670;&#160;</a></span>get_hours_worked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Person::get_hours_worked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter method for hours worked. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7b2385898525aa5f9a4e9396fabadb47" name="a7b2385898525aa5f9a4e9396fabadb47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b2385898525aa5f9a4e9396fabadb47">&#9670;&#160;</a></span>get_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Person::get_id </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter method for ID. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aac45e93a34c52e5adaeff6efe5436081" name="aac45e93a34c52e5adaeff6efe5436081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac45e93a34c52e5adaeff6efe5436081">&#9670;&#160;</a></span>get_last_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Person::get_last_name </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter method for last name. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a5f3b79fba3ce2269d80228c5bbb713c9" name="a5f3b79fba3ce2269d80228c5bbb713c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f3b79fba3ce2269d80228c5bbb713c9">&#9670;&#160;</a></span>set_hourly_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Person::set_hourly_rate </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>new_rate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter method for hourly rate; requires new rate as parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_rate</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad082db4751e584833f0256de52199ce" name="aad082db4751e584833f0256de52199ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad082db4751e584833f0256de52199ce">&#9670;&#160;</a></span>set_hours_worked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Person::set_hours_worked </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>new_hours</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter method for hours worked; required new hours as parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_hours</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/examples/<a class="el" href="person_8h_source.html">person.h</a></li>
 </ul>

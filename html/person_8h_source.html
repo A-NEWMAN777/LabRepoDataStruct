@@ -108,42 +108,47 @@ $(function(){initNavTree('person_8h_source.html',''); initResizable(true); });
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _PERSON_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _PERSON_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_person.html">    5</a></span><span class="keyword">class </span>Person</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    std::string first_name;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    std::string last_name;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">float</span> hourly_rate;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hours_worked;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// Constructors</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    Person();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Person(<span class="keywordtype">int</span> starting_id, std::string start_fname, std::string start_lname);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Destructor</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ~Person();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Getter methods (const for const-correctness)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">int</span> get_id() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::string get_first_name() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::string get_last_name() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">float</span> get_hourly_rate() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> get_hours_worked() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Setter methods</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> set_hourly_rate(<span class="keywordtype">float</span> new_rate);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> set_hours_worked(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> new_hours);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Calculate wage (mark it as const because it doesn&#39;t modify the object)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">float</span> calculate_wage() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_person.html">   10</a></span><span class="keyword">class </span>Person</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> id;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::string first_name;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::string last_name;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">float</span> hourly_rate;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hours_worked;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Constructors</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    Person();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    Person(<span class="keywordtype">int</span> starting_id, std::string start_fname, std::string start_lname);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// Destructor</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    ~Person();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_person.html#a7b2385898525aa5f9a4e9396fabadb47">   47</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_person.html#a7b2385898525aa5f9a4e9396fabadb47">get_id</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_person.html#af901070b7e0214ae87c31c6d7a1098fe">   52</a></span>    std::string <a class="code hl_function" href="class_person.html#af901070b7e0214ae87c31c6d7a1098fe">get_first_name</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_person.html#aac45e93a34c52e5adaeff6efe5436081">   57</a></span>    std::string <a class="code hl_function" href="class_person.html#aac45e93a34c52e5adaeff6efe5436081">get_last_name</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_person.html#ac669f7098eade309ce0de6bff6666324">   62</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_person.html#ac669f7098eade309ce0de6bff6666324">get_hourly_rate</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_person.html#a420bda3ef16a393c54fc988ff4c1e8c2">   67</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_person.html#a420bda3ef16a393c54fc988ff4c1e8c2">get_hours_worked</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_person.html#a5f3b79fba3ce2269d80228c5bbb713c9">   73</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_person.html#a5f3b79fba3ce2269d80228c5bbb713c9">set_hourly_rate</a>(<span class="keywordtype">float</span> new_rate);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_person.html#aad082db4751e584833f0256de52199ce">   78</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_person.html#aad082db4751e584833f0256de52199ce">set_hours_worked</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> new_hours);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_person.html#abda868aa627e39cd420468dfe2cc775d">   84</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_person.html#abda868aa627e39cd420468dfe2cc775d">calculate_wage</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_person_html_a420bda3ef16a393c54fc988ff4c1e8c2"><div class="ttname"><a href="class_person.html#a420bda3ef16a393c54fc988ff4c1e8c2">Person::get_hours_worked</a></div><div class="ttdeci">unsigned int get_hours_worked() const</div><div class="ttdoc">Getter method for hours worked.</div></div>
+<div class="ttc" id="aclass_person_html_a5f3b79fba3ce2269d80228c5bbb713c9"><div class="ttname"><a href="class_person.html#a5f3b79fba3ce2269d80228c5bbb713c9">Person::set_hourly_rate</a></div><div class="ttdeci">void set_hourly_rate(float new_rate)</div><div class="ttdoc">Setter method for hourly rate; requires new rate as parameter.</div></div>
+<div class="ttc" id="aclass_person_html_a7b2385898525aa5f9a4e9396fabadb47"><div class="ttname"><a href="class_person.html#a7b2385898525aa5f9a4e9396fabadb47">Person::get_id</a></div><div class="ttdeci">int get_id() const</div><div class="ttdoc">Getter method for ID.</div></div>
+<div class="ttc" id="aclass_person_html_aac45e93a34c52e5adaeff6efe5436081"><div class="ttname"><a href="class_person.html#aac45e93a34c52e5adaeff6efe5436081">Person::get_last_name</a></div><div class="ttdeci">std::string get_last_name() const</div><div class="ttdoc">Getter method for last name.</div></div>
+<div class="ttc" id="aclass_person_html_aad082db4751e584833f0256de52199ce"><div class="ttname"><a href="class_person.html#aad082db4751e584833f0256de52199ce">Person::set_hours_worked</a></div><div class="ttdeci">void set_hours_worked(unsigned int new_hours)</div><div class="ttdoc">Setter method for hours worked; required new hours as parameter.</div></div>
+<div class="ttc" id="aclass_person_html_abda868aa627e39cd420468dfe2cc775d"><div class="ttname"><a href="class_person.html#abda868aa627e39cd420468dfe2cc775d">Person::calculate_wage</a></div><div class="ttdeci">float calculate_wage() const</div><div class="ttdoc">Simple method that calculates the wage of a person by multplying their hours worked by their hourly r...</div></div>
+<div class="ttc" id="aclass_person_html_ac669f7098eade309ce0de6bff6666324"><div class="ttname"><a href="class_person.html#ac669f7098eade309ce0de6bff6666324">Person::get_hourly_rate</a></div><div class="ttdeci">float get_hourly_rate() const</div><div class="ttdoc">Getter method for hourly rate.</div></div>
+<div class="ttc" id="aclass_person_html_af901070b7e0214ae87c31c6d7a1098fe"><div class="ttname"><a href="class_person.html#af901070b7e0214ae87c31c6d7a1098fe">Person::get_first_name</a></div><div class="ttdeci">std::string get_first_name() const</div><div class="ttdoc">Getter method for first name.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

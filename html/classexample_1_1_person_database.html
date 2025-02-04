@@ -108,25 +108,154 @@ $(function(){initNavTree('classexample_1_1_person_database.html',''); initResiza
   <div class="headertitle"><div class="title">example::PersonDatabase Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the class for the <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> Database which contains <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> objects as well as integer values for the capacity of the array, how many people are currently in the array, the name of the txt file that is given when a <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> Database object is created. This class includes methods to add/remove a person from the file and array, a Getter method for num_people, and a method the convert the database to a string(for printing to txt file more efficiently).  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="person__database_8h_source.html">person_database.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a944fa41d692eb88e9b26d8f6bc6771d3" id="r_a944fa41d692eb88e9b26d8f6bc6771d3"><td class="memItemLeft" align="right" valign="top"><a id="a944fa41d692eb88e9b26d8f6bc6771d3" name="a944fa41d692eb88e9b26d8f6bc6771d3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PersonDatabase</b> (const std::string &amp;file)</td></tr>
+<tr class="memitem:a944fa41d692eb88e9b26d8f6bc6771d3" id="r_a944fa41d692eb88e9b26d8f6bc6771d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a944fa41d692eb88e9b26d8f6bc6771d3">PersonDatabase</a> (const std::string &amp;file)</td></tr>
+<tr class="memdesc:a944fa41d692eb88e9b26d8f6bc6771d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classexample_1_1_person_database.html" title="This is the class for the Person Database which contains Person objects as well as integer values for...">PersonDatabase</a> that requires the name of a file that the program will use to store data; if the file does not exist, the program will create it.  <br /></td></tr>
 <tr class="separator:a944fa41d692eb88e9b26d8f6bc6771d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3befa82e25d73582308dc93169ab9eb0" id="r_a3befa82e25d73582308dc93169ab9eb0"><td class="memItemLeft" align="right" valign="top"><a id="a3befa82e25d73582308dc93169ab9eb0" name="a3befa82e25d73582308dc93169ab9eb0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_person</b> (const <a class="el" href="class_person.html">Person</a> &amp;new_person)</td></tr>
+<tr class="memitem:a84558db880f925669f94925eb06ea1e2" id="r_a84558db880f925669f94925eb06ea1e2"><td class="memItemLeft" align="right" valign="top"><a id="a84558db880f925669f94925eb06ea1e2" name="a84558db880f925669f94925eb06ea1e2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~PersonDatabase</b> ()</td></tr>
+<tr class="memdesc:a84558db880f925669f94925eb06ea1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstructor method; correctly saves data so that it does not need to be reentered after a restart. <br /></td></tr>
+<tr class="separator:a84558db880f925669f94925eb06ea1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3befa82e25d73582308dc93169ab9eb0" id="r_a3befa82e25d73582308dc93169ab9eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3befa82e25d73582308dc93169ab9eb0">add_person</a> (const <a class="el" href="class_person.html">Person</a> &amp;new_person)</td></tr>
+<tr class="memdesc:a3befa82e25d73582308dc93169ab9eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to add a new <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> object to the array and the txt file.  <br /></td></tr>
 <tr class="separator:a3befa82e25d73582308dc93169ab9eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d44bafaa10424909b770414c6aa392c" id="r_a4d44bafaa10424909b770414c6aa392c"><td class="memItemLeft" align="right" valign="top"><a id="a4d44bafaa10424909b770414c6aa392c" name="a4d44bafaa10424909b770414c6aa392c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>remove_person</b> (int id)</td></tr>
+<tr class="memitem:a4d44bafaa10424909b770414c6aa392c" id="r_a4d44bafaa10424909b770414c6aa392c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d44bafaa10424909b770414c6aa392c">remove_person</a> (int id)</td></tr>
+<tr class="memdesc:a4d44bafaa10424909b770414c6aa392c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to remove an existing <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> odject from the array and the txt file; requires the user to enter an existing ID.  <br /></td></tr>
 <tr class="separator:a4d44bafaa10424909b770414c6aa392c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a107f02a4a394b6f9901ecdab41927bc9" id="r_a107f02a4a394b6f9901ecdab41927bc9"><td class="memItemLeft" align="right" valign="top"><a id="a107f02a4a394b6f9901ecdab41927bc9" name="a107f02a4a394b6f9901ecdab41927bc9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_num_people</b> () const</td></tr>
+<tr class="memitem:a107f02a4a394b6f9901ecdab41927bc9" id="r_a107f02a4a394b6f9901ecdab41927bc9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a107f02a4a394b6f9901ecdab41927bc9">get_num_people</a> () const</td></tr>
+<tr class="memdesc:a107f02a4a394b6f9901ecdab41927bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for the number of people in the array.  <br /></td></tr>
 <tr class="separator:a107f02a4a394b6f9901ecdab41927bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa2b179af3971e520c697f855233f76" id="r_aefa2b179af3971e520c697f855233f76"><td class="memItemLeft" align="right" valign="top"><a id="aefa2b179af3971e520c697f855233f76" name="aefa2b179af3971e520c697f855233f76"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>to_string</b> () const</td></tr>
+<tr class="memitem:aefa2b179af3971e520c697f855233f76" id="r_aefa2b179af3971e520c697f855233f76"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefa2b179af3971e520c697f855233f76">to_string</a> () const</td></tr>
+<tr class="memdesc:aefa2b179af3971e520c697f855233f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that converts the entire database into a string.  <br /></td></tr>
 <tr class="separator:aefa2b179af3971e520c697f855233f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the class for the <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> Database which contains <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> objects as well as integer values for the capacity of the array, how many people are currently in the array, the name of the txt file that is given when a <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> Database object is created. This class includes methods to add/remove a person from the file and array, a Getter method for num_people, and a method the convert the database to a string(for printing to txt file more efficiently). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a944fa41d692eb88e9b26d8f6bc6771d3" name="a944fa41d692eb88e9b26d8f6bc6771d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a944fa41d692eb88e9b26d8f6bc6771d3">&#9670;&#160;</a></span>PersonDatabase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">example::PersonDatabase::PersonDatabase </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="classexample_1_1_person_database.html" title="This is the class for the Person Database which contains Person objects as well as integer values for...">PersonDatabase</a> that requires the name of a file that the program will use to store data; if the file does not exist, the program will create it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>this is the name of the file in relation to the projects location</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3befa82e25d73582308dc93169ab9eb0" name="a3befa82e25d73582308dc93169ab9eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3befa82e25d73582308dc93169ab9eb0">&#9670;&#160;</a></span>add_person()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::PersonDatabase::add_person </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_person.html">Person</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>new_person</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method to add a new <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> object to the array and the txt file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_person</td><td>new person object</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a107f02a4a394b6f9901ecdab41927bc9" name="a107f02a4a394b6f9901ecdab41927bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107f02a4a394b6f9901ecdab41927bc9">&#9670;&#160;</a></span>get_num_people()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int example::PersonDatabase::get_num_people </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter method for the number of people in the array. </p>
+<dl class="section return"><dt>Returns</dt><dd>returns an integer</dd></dl>
+
+</div>
+</div>
+<a id="a4d44bafaa10424909b770414c6aa392c" name="a4d44bafaa10424909b770414c6aa392c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d44bafaa10424909b770414c6aa392c">&#9670;&#160;</a></span>remove_person()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool example::PersonDatabase::remove_person </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method to remove an existing <a class="el" href="class_person.html" title="Class for a single person object that contains a person&#39;s ID, First Name, Last Name,...">Person</a> odject from the array and the txt file; requires the user to enter an existing ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>id of the person object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns 0 or 1</dd></dl>
+
+</div>
+</div>
+<a id="aefa2b179af3971e520c697f855233f76" name="aefa2b179af3971e520c697f855233f76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa2b179af3971e520c697f855233f76">&#9670;&#160;</a></span>to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string example::PersonDatabase::to_string </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method that converts the entire database into a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>returns an integer</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="person__database_8h_source.html">person_database.h</a></li>
 </ul>

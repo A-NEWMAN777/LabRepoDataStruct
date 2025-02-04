@@ -14,6 +14,7 @@ Person::~Person() {
 }
 
 // Getter methods (const for const-correctness)
+
 int Person::get_id() const {
     return id;
 }
