@@ -3,11 +3,13 @@
 namespace example {
 
     PersonDatabase::PersonDatabase(const std::string& file)
-        : people(nullptr), capacity(0), num_people(0), filename(file) {
-        std::ifstream infile(file);
+        : people(nullptr), capacity(10), num_people(0), filename(file) {
+        people = new Person[capacity];  // Allocate memory for a fixed number of people
+
+        std::fstream infile(file, std::ios::in);  // Open file for reading
         if (!infile) {
             // File doesn't exist or couldn't be opened
-            return; // No allocation needed
+            return; // No data is loaded if the file doesn't exist
         }
 
         // Read data from the file
@@ -22,20 +24,19 @@ namespace example {
             std::istringstream ss(line);
             ss >> id >> first_name >> last_name >> hourly_rate >> hours_worked;
 
-            // Add person to the database
-            if (num_people >= capacity) {
-                resize();
+            // Only add person if we have space in the array
+            if (num_people < capacity) {
+                people[num_people++] = Person(id, first_name, last_name);
+                people[num_people - 1].set_hourly_rate(hourly_rate);
+                people[num_people - 1].set_hours_worked(hours_worked);
             }
-            people[num_people++] = Person(id, first_name, last_name);
-            people[num_people - 1].set_hourly_rate(hourly_rate);
-            people[num_people - 1].set_hours_worked(hours_worked);
         }
         infile.close();
     }
 
     PersonDatabase::~PersonDatabase() {
-        // Write the database to the file
-        std::ofstream outfile(filename);
+        // Write the database to the file using fstream
+        std::fstream outfile(filename, std::ios::out); // Open file for writing, overwrite contents
         if (outfile) {
             for (int i = 0; i < num_people; ++i) {
                 outfile << people[i].get_id() << " "
@@ -48,33 +49,15 @@ namespace example {
         delete[] people;
     }
 
-    void PersonDatabase::resize() {
-        // Resize the array by doubling the capacity
-        int new_capacity = (capacity == 0) ? 2 : capacity * 2;
-        Person* new_people = new Person[new_capacity];
-        for (int i = 0; i < num_people; ++i) {
-            new_people[i] = people[i];
-        }
-        delete[] people;
-        people = new_people;
-        capacity = new_capacity;
-    }
-
     void PersonDatabase::add_person(const Person& new_person) {
-        // Check if the person with the same ID already exists
-        for (int i = 0; i < num_people; ++i) {
-            if (people[i].get_id() == new_person.get_id()) {
-                throw std::runtime_error("ID already exists in the database.");
-            }
+        // Check if there is space in the array to add a new person
+        if (num_people < capacity) {
+            // Add new person to the array
+            people[num_people++] = new_person;
         }
-
-        // Resize if necessary
-        if (num_people >= capacity) {
-            resize();
+        else {
+            std::cout << "Database is full. Cannot add new person.\n";
         }
-
-        // Add new person to the array
-        people[num_people++] = new_person;
     }
 
     bool PersonDatabase::remove_person(int id) {
@@ -85,6 +68,23 @@ namespace example {
                     people[j] = people[j + 1];
                 }
                 --num_people;
+
+                // After removal, we need to rewrite the file to reflect the change
+                std::fstream outfile(filename, std::ios::out | std::ios::trunc);  // Open file for overwriting
+                if (outfile) {
+                    for (int i = 0; i < num_people; ++i) {
+                        outfile << people[i].get_id() << " "
+                            << people[i].get_first_name() << " "
+                            << people[i].get_last_name() << " "
+                            << people[i].get_hourly_rate() << " "
+                            << people[i].get_hours_worked() << "\n";
+                    }
+                    std::cout << "Person removed and file updated successfully.\n";
+                }
+                else {
+                    std::cerr << "Failed to open the file for updating.\n";
+                }
+
                 return true;
             }
         }
@@ -100,26 +100,26 @@ namespace example {
         float total_salary = 0.0f;
 
         oss << "Person Database\n";
-        oss << "==============================================================================================================\n"
-            << "==============================================================================================================\n";
-
+        oss << "===============================================================================================================\n"
+            << "===============================================================================================================\n";
 
         for (int i = 0; i < num_people; ++i) {
             const Person& person = people[i];
             float wage = person.calculate_wage();
             total_salary += wage;
-            oss << "||ID||=||First Name||=||Last Name||=||Hours Worked||=||Hourly Rate||====||Wage||\n  " << person.get_id()
-                << "   \t "<< person.get_first_name() 
-                << "\t\t" << person.get_last_name() 
-                << "\t" << person.get_hours_worked() <<"hrs" 
-                << "\t\t" << person.get_hourly_rate() <<"$/hr"
-                << "\t$" << wage << "\n\n";
+            oss << "||ID||=||First Name||=||Last Name||=||Hours Worked||=||Hourly Rate||====||Wage||\n  "
+                << person.get_id() << "   \t "
+                << person.get_first_name() << "\t\t"
+                << person.get_last_name() << "\t\t"
+                << person.get_hours_worked() << "hrs"
+                << "\t" << person.get_hourly_rate() << "$/hr"
+                << "\t\t$" << wage << "\n\n";
         }
 
         oss << "===============================================================================================================\n"
-            << "===============================================================================================================\n" << "Total: $" << total_salary << "\n";
+            << "===============================================================================================================\n"
+            << "Total: $" << total_salary << "\n";
         return oss.str();
     }
-    
 
 } // namespace example

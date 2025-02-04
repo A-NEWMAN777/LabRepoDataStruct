@@ -2,6 +2,7 @@
 #include <sstream>
 #include <string>
 #include <stdexcept>
+#include <fstream>
 #include "person.h"
 #include "person_database.h"
 
@@ -18,7 +19,7 @@ void display_menu() {
 
 int main() {
     // Create the PersonDatabase object, assuming the file is stored in a "media" folder
-    PersonDatabase db("media/people.txt");
+    PersonDatabase db("../media/p_database.txt");
 
     bool running = true;
     while (running) {

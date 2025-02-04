@@ -11,7 +11,6 @@ Person::Person(int starting_id, std::string start_fname, std::string start_lname
 
 // Destructor
 Person::~Person() {
-    std::cout << "Person '" << first_name << " " << last_name << "' is about to die!\n";
 }
 
 // Getter methods (const for const-correctness)
@@ -37,10 +36,7 @@ unsigned int Person::get_hours_worked() const {
 
 // Setter methods
 void Person::set_hourly_rate(float new_rate) {
-    if (new_rate < 0 || new_rate > 1000)
-    {
-        throw std::runtime_error("Invalid Rate of $" + std::to_string(new_rate));
-    }
+    
     hourly_rate = new_rate;
 }
 
