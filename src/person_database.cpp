@@ -36,7 +36,7 @@ namespace example {
 
     PersonDatabase::~PersonDatabase() {
         // Write the database to the file using fstream
-        std::fstream outfile(filename, std::ios::out); // Open file for writing, overwrite contents
+        std::fstream outfile(filename, std::ios::out); // Open file for writing
         if (outfile) {
             for (int i = 0; i < num_people; ++i) {
                 outfile << people[i].get_id() << " "
@@ -56,7 +56,7 @@ namespace example {
             people[num_people++] = new_person;
         }
         else {
-            std::cout << "Database is full. Cannot add new person.\n";
+            capacity = capacity * 2;
         }
     }
 
@@ -113,7 +113,7 @@ namespace example {
                 << person.get_last_name() << "\t\t"
                 << person.get_hours_worked() << "hrs"
                 << "\t" << person.get_hourly_rate() << "$/hr"
-                << "\t\t$" << wage << "\n\n";
+                << "\t\t$" << wage << "\n";
         }
 
         oss << "===============================================================================================================\n"
