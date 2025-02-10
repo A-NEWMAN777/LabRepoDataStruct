@@ -15,13 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="lab02_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\person_database.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\lab01_main.cpp">
+    <ClCompile Include="..\src\examples\person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\examples\person.cpp">
+    <ClCompile Include="array_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\include\examples\person.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="array_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
