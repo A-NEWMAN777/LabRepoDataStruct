@@ -24,9 +24,6 @@
     <ClCompile Include="..\src\examples\person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="array_list.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\person_database.h">
@@ -35,7 +32,7 @@
     <ClInclude Include="..\include\examples\person.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="array_list.h">
+    <ClInclude Include="..\include\array_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

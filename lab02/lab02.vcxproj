@@ -135,13 +135,12 @@
   <ItemGroup>
     <ClCompile Include="..\src\examples\person.cpp" />
     <ClCompile Include="..\src\person_database.cpp" />
-    <ClCompile Include="array_list.cpp" />
     <ClCompile Include="lab02_main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\array_list.h" />
     <ClInclude Include="..\include\examples\person.h" />
     <ClInclude Include="..\include\person_database.h" />
-    <ClInclude Include="array_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

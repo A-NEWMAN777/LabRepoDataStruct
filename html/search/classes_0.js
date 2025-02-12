@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['person_0',['Person',['../class_person.html',1,'']]],
-  ['persondatabase_1',['PersonDatabase',['../classexample_1_1_person_database.html',1,'example']]]
+  ['arraylist_0',['ArrayList',['../classssuds_1_1_array_list.html',1,'ssuds']]]
 ];

@@ -128,5 +128,14 @@ namespace example
 		/// <param name="reset">Set to true if we want to reset the hours worked after calling this method</param>
 		/// <returns></returns>
 		float get_salary(bool reset = false);
+
+		bool operator==(const Person& other) const {
+			if (this->mID == other.mID &&
+				this->mFirstName == other.mFirstName &&
+				this->mLastName == other.mLastName)
+				return 1;
+			else 
+				return 0;
+				}
 	};
 }

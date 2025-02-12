@@ -1,93 +1,111 @@
 #include <iostream>
 #include "array_list.h"
+#include "person.h" // Assuming this is the class you've defined elsewhere
 
 int main() {
-    // Basic test program (for floats)
+
+    // Test 1: Basic operations with float
     ssuds::ArrayList<float> float_list;
-    std::cout << "Test 1 (Append and Size):\n====================\n";
-    float_list.append(2.1f); // Append 2.1
-    float_list.append(3.6f); // Append 3.6
-    std::cout << "\tsize=" << float_list.size() << std::endl; // Expected: 2
-    std::cout << "\titem0=" << float_list.at(0) << std::endl;  // Expected: 2.1
-    std::cout << "\titem1=" << float_list.at(1) << std::endl;  // Expected: 3.6
+    std::cout << "test1 (basic operations with float):\n=====\n";
 
-    std::cout << "\nTest 2 (Insert at Index):\n====================\n";
-    float_list.insert(1.8f, 0); // Insert at index 0
-    float_list.insert(4.2f, 3); // Insert at index 3 (end of list)
-    float_list.insert(2.0f, 1); // Insert at index 1
+    // Append
+    float_list.append(2.1f);
+    float_list.append(3.6f);
+
+    // Output size and items
+    std::cout << "\tsize=" << float_list.size() << std::endl;
+    std::cout << "\titem0=" << float_list.at(0) << std::endl;
+    std::cout << "\titem1=" << float_list.at(1) << std::endl;
+
+    // Test 2: Insert operations for float
+    std::cout << "test2 (insert operations with float):\n=====\n";
+    float_list.insert(1.8f, 0);  // Insert at beginning
+    float_list.insert(4.2f, 3);  // Insert at the end
+    float_list.insert(2.0f, 1);  // Insert in the middle
+
+    // Output all items after insertions
     for (int i = 0; i < float_list.size(); i++) {
-        std::cout << "\titem" << i << "=" << float_list.at(i) << std::endl;
-    }
-    // Expected output: 
-    // item0=1.8
-    // item1=2.0
-    // item2=2.1
-    // item3=3.6
-    // item4=4.2
-
-    std::cout << "\nTest 3 (Find Method):\n====================\n";
-    int index = float_list.find(2.0f); // Should return 1
-    std::cout << "\tIndex of 2.0: " << index << std::endl; // Expected: 1
-    index = float_list.find(5.0f); // Should return -1 (not found)
-    std::cout << "\tIndex of 5.0: " << index << std::endl; // Expected: -1
-
-    std::cout << "\nTest 4 (Remove Method):\n====================\n";
-    float removed_item = float_list.remove(1); // Remove item at index 1
-    std::cout << "\tRemoved item: " << removed_item << std::endl; // Expected: 2.0
-    std::cout << "\tsize after removal: " << float_list.size() << std::endl; // Expected: 4
-
-    std::cout << "\nTest 5 (Remove All Occurrences):\n====================\n";
-    float_list.append(2.1f); // Add another 2.1 for testing remove_all
-    float count = float_list.remove_all(2.1f); // Should remove 2.1 twice
-    std::cout << "\tRemoved count for 2.1: " << count << std::endl; // Expected: 2
-    std::cout << "\tsize after remove_all: " << float_list.size() << std::endl; // Expected: 3
-
-    std::cout << "\nTest 6 (Out of Range Access):\n====================\n";
-    try {
-        std::cout << "\tAccessing item at index 10: " << float_list.at(10) << std::endl;
-    }
-    catch (...) {
-        std::cout << "\tCaught out of range exception for index 10." << std::endl;
+        std::cout << "\titem" << i << "=" << float_list.at(i) << "\n";
     }
 
-    // Basic test program (for integers)
-    ssuds::ArrayList<int> int_list;
-    std::cout << "\nTest 7 (Append and Size for Integers):\n====================\n";
-    int_list.append(5);
-    int_list.append(10);
-    std::cout << "\tsize=" << int_list.size() << std::endl; // Expected: 2
-    std::cout << "\titem0=" << int_list.at(0) << std::endl; // Expected: 5
-    std::cout << "\titem1=" << int_list.at(1) << std::endl; // Expected: 10
-
-    std::cout << "\nTest 8 (Insert at Index for Integers):\n====================\n";
-    int_list.insert(7, 0); // Insert 7 at index 0
-    int_list.insert(2, 3); // Insert 2 at index 3 (end of list)
-    for (int i = 0; i < int_list.size(); i++) {
-        std::cout << "\titem" << i << "=" << int_list.at(i) << std::endl;
+    // Test 3: Remove an element from float
+    std::cout << "test3 (remove an element from float):\n=====\n";
+    float_list.remove(2); // Remove item at index 2 (value 2.1)
+    std::cout << "After remove(2):\n";
+    for (int i = 0; i < float_list.size(); i++) {
+        std::cout << "\titem" << i << "=" << float_list.at(i) << "\n";
     }
-    // Expected output: 
-    // item0=7
-    // item1=5
-    // item2=10
-    // item3=2
 
-    std::cout << "\nTest 9 (Find Method for Integers):\n====================\n";
-    index = int_list.find(10); // Should return 2
-    std::cout << "\tIndex of 10: " << index << std::endl; // Expected: 2
-    index = int_list.find(3); // Should return -1 (not found)
-    std::cout << "\tIndex of 3: " << index << std::endl; // Expected: -1
+    // Test 4: Remove all occurrences of a value in float
+    std::cout << "test4 (remove_all occurrences of value in float):\n=====\n";
+    float_list.append(2.0f);
+    float_list.append(1.8f);
+    float_list.append(1.8f);  // Adding more 1.8 values
 
-    std::cout << "\nTest 10 (Remove Method for Integers):\n====================\n";
-    removed_item = int_list.remove(0); // Remove item at index 0 (7)
-    std::cout << "\tRemoved item: " << removed_item << std::endl; // Expected: 7
-    std::cout << "\tsize after removal: " << int_list.size() << std::endl; // Expected: 3
+    unsigned int removedCount = float_list.remove_all(1.8f);
+    std::cout << "\tRemoved " << removedCount << " occurrences of 1.8f\n";
+    for (int i = 0; i < float_list.size(); i++) {
+        std::cout << "\titem" << i << "=" << float_list.at(i) << "\n";
+    }
+    std::cout << "\n";
 
-    // Test the reserve method
-    std::cout << "\nTest 11 (Reserve Method):\n====================\n";
-    int_list.reserve(10); // Should not change size, but capacity should be 10
-    std::cout << "\tCapacity after reserve: " << int_list.capacity() << std::endl; // Expected: 10
+    // Test 5: Test find method for float
+    std::cout << "test5 (find method for float):\n=====\n";
+    int index = float_list.find(4.2f);
+    std::cout << "\tIndex of 4.2f: " << index << std::endl;
 
+    // Test 6: Reserve method for float
+    std::cout << "test6 (reserve capacity for float):\n=====\n";
+    float_list.reserve(20);  // Reserve more space than needed
+    std::cout << "\tAfter reserve(20), capacity=" << float_list.capacity() << std::endl;
 
+    // Test 7: Test with Person object
+    std::cout << "test7 (operations with Person objects):\n=====\n";
 
+    ssuds::ArrayList<example::Person> person_list;
+    example::Person p1("John","Newman", 1, 45), p2("Jane", "Whithers", 2, 30);
+
+    person_list.append(p1);
+    person_list.append(p2);
+
+    // Output size and items
+    std::cout << "\tsize=" << person_list.size() << std::endl;
+    std::cout << "\titem0=" << person_list.at(0).get_first_name() << " " <<person_list.at(0).get_last_name()<< " ID# "<< person_list.at(0).get_id() << std::endl;
+    std::cout << "\titem1=" << person_list.at(1).get_first_name() <<" "<< 
+        person_list.at(1).get_last_name() << " ID#" << person_list.at(1).get_id() << std::endl;
+    std::cout << '\n';
+
+    // Insert more people into the list
+    person_list.insert(example::Person("Alice","Robinson", 3, 22), 1);
+    person_list.insert(example::Person("Bob", "Billiamson", 4, 27), 3);
+
+    std::cout << "After inserts with Person objects:\n";
+    for (int i = 0; i < person_list.size(); i++) {
+        std::cout << "\titem" << i << "=" << person_list.at(i).get_first_name() << " "
+            << person_list.at(i).get_last_name() 
+            << ", " << person_list.at(i).get_id() << "\n";
+    }
+    std::cout << '\n';
+
+    // Test remove on Person object
+    person_list.remove(1);  // Remove second item (Alice)
+    std::cout << "After remove(1) on Person object:\n";
+    for (int i = 0; i < person_list.size(); i++) {
+        std::cout << "\titem" << i << "=" << person_list.at(i).get_first_name() << " " 
+            << person_list.at(i).get_last_name()<< " ID# " << person_list.at(i).get_id() << "\n";
+    }
+    std::cout << '\n';
+
+    // Test find with Person object
+    std::cout << "test8 (find method for Person):\n=====\n";
+    int personIndex = person_list.find(p2); // Find "Bob"
+    std::cout << "\tIndex of Bob: " << personIndex << std::endl;
+
+    // Test reserve with Person object
+    std::cout << "test9 (reserve capacity for Person):\n=====\n";
+    person_list.reserve(10);  // Reserve more space for the list
+    std::cout << "\tAfter reserve(10), capacity=" << person_list.capacity() << std::endl;
     return 0;
 }
+
+
