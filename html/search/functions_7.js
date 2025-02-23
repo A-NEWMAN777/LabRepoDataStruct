@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['remove_0',['remove',['../classssuds_1_1_array_list.html#abfa88e339ab66bab61b172d12814a0aa',1,'ssuds::ArrayList']]],
-  ['remove_5fall_1',['remove_all',['../classssuds_1_1_array_list.html#a4dc7d4db6e15ad5112e776c82d319a8a',1,'ssuds::ArrayList']]],
-  ['remove_5fperson_2',['remove_person',['../classexample_1_1_person_database.html#a831835c506fa66d02deb9e16db7145de',1,'example::PersonDatabase']]],
-  ['reserve_3',['reserve',['../classssuds_1_1_array_list.html#a2fca20e52804b02b72013d4db70e8946',1,'ssuds::ArrayList']]],
-  ['resize_4',['resize',['../classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6',1,'ssuds::ArrayList']]]
+  ['person_0',['Person',['../classexample_1_1_person.html#a13cef9dd175bcc612ae4fca575f91bc5',1,'example::Person::Person()'],['../classexample_1_1_person.html#a65581079655d7a538d88fe513564c952',1,'example::Person::Person(const std::string &amp;starting_fname, const std::string &amp;starting_lname, unsigned int id, float starting_rate)']]],
+  ['persondatabase_1',['PersonDatabase',['../classexample_1_1_person_database.html#a5845e87cbf0ef0dc90192020a9dfd8b9',1,'example::PersonDatabase']]]
 ];

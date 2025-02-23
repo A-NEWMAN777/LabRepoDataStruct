@@ -55,7 +55,7 @@ namespace example
 		/// <summary>
 		/// This is a constructor that takes initial values for most of the attributes
 		/// </summary>
-		Person(std::string starting_fname, std::string starting_lname, unsigned int id, float starting_rate);
+		Person(const std::string& starting_fname, const std::string& starting_lname, unsigned int id, float starting_rate);
 
 		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		//@ GETTERS / SETTERS               @
@@ -129,13 +129,7 @@ namespace example
 		/// <returns></returns>
 		float get_salary(bool reset = false);
 
-		bool operator==(const Person& other) const {
-			if (this->mID == other.mID &&
-				this->mFirstName == other.mFirstName &&
-				this->mLastName == other.mLastName)
-				return 1;
-			else 
-				return 0;
-				}
+
+
 	};
 }

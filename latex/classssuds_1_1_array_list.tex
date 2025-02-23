@@ -1,0 +1,257 @@
+\doxysection{ssuds\+::Array\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classssuds_1_1_array_list}{}\label{classssuds_1_1_array_list}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+
+
+A dynamic array implementation for storing alements of type T.  
+
+
+
+
+{\ttfamily \#include $<$array\+\_\+list.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}}
+\begin{DoxyCompactList}\small\item\em an iterator class for traversing the elements in the \doxylink{classssuds_1_1_array_list}{Array\+List} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_array_list_a17073605b1b8e31ca126e61db633c57d}\label{classssuds_1_1_array_list_a17073605b1b8e31ca126e61db633c57d} 
+{\bfseries Array\+List} ()
+\begin{DoxyCompactList}\small\item\em a pointer to the raw memory where elements are stored. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classssuds_1_1_array_list_a3a7c9bd58748ea361ca69b45c1c66681}{append}} (const T \&val)
+\begin{DoxyCompactList}\small\item\em Appends an element to the end of the list. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classssuds_1_1_array_list_a78b660cd011f7d236e41e8602412072a}{at}} (const unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Accesses the element at the given index. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classssuds_1_1_array_list_a4e9f0d67b921ddde2da06bdef3012ca8}{capacity}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current capacity of the list. \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_array_list_a29f9aaf226d5c6fde758546102150271}\label{classssuds_1_1_array_list_a29f9aaf226d5c6fde758546102150271} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em clears the list by deleting the underlying ddata and resetting size and capacity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classssuds_1_1_array_list_abd03aedf6acb7f37086d83a4b5ed9dd2}{insert}} (const T \&val, unsigned int index)
+\begin{DoxyCompactList}\small\item\em Inserts and element at the specified index; if the list is full, the capacity is increased. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classssuds_1_1_array_list_af8ea5f78a78d4c3dbdf66223a51172bd}{find}} (const T \&val, unsigned int start\+\_\+index=0)
+\begin{DoxyCompactList}\small\item\em Finds the first occurence of the specified element. starts from the specified index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classssuds_1_1_array_list_a891330426da480ed1bbbfb29fb018b3a}{reserve}} (unsigned int desired\+\_\+capacity)
+\begin{DoxyCompactList}\small\item\em Reserves a minimum capacity for the list. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classssuds_1_1_array_list_adbcd61184deb92c36610e47b91a7b6d5}{size}} () const
+\begin{DoxyCompactList}\small\item\em the current \# of elements in the list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list_a29d38b6e2574880f07422497f468ddd8}{begin}} ()
+\begin{DoxyCompactList}\small\item\em returns an iterator pointing to the first element of the list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list_a807800c2ae6c98f36604c1e5a03ea8ca}{end}} ()
+\begin{DoxyCompactList}\small\item\em returns an iterator pointing to the element after the last element \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classssuds_1_1_array_list_aa04e39200150aa88efa95253e98d0667}{remove\+\_\+all}} (const T \&val)
+\begin{DoxyCompactList}\small\item\em removes all occurences of the specifed element \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_array_list_ae18613568842335b1d115958d2f34bab}\label{classssuds_1_1_array_list_ae18613568842335b1d115958d2f34bab} 
+void {\bfseries shrink} ()
+\begin{DoxyCompactList}\small\item\em Shrinks the capacity of the list to fit its size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_array_list_a07a02cc34fc7c9162e64e3c7a7d1a963}\label{classssuds_1_1_array_list_a07a02cc34fc7c9162e64e3c7a7d1a963} 
+void {\bfseries grow} ()
+\begin{DoxyCompactList}\small\item\em Grows the capacity of the list if its full; the capacity is doubled if its full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_array_list_ac4487ae34800f88539054c3721568c10}\label{classssuds_1_1_array_list_ac4487ae34800f88539054c3721568c10} 
+unsigned int {\bfseries m\+Capacity}
+\begin{DoxyCompactList}\small\item\em The minimum initial capacity of the list. \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_array_list_a8f68ee08bdbaa2f26d017816e4e46e42}\label{classssuds_1_1_array_list_a8f68ee08bdbaa2f26d017816e4e46e42} 
+unsigned int {\bfseries m\+Size}
+\begin{DoxyCompactList}\small\item\em the current capacity of the list. \end{DoxyCompactList}\item 
+\Hypertarget{classssuds_1_1_array_list_aeab51f415e302012806b0d6cdfefc96b}\label{classssuds_1_1_array_list_aeab51f415e302012806b0d6cdfefc96b} 
+unsigned char \texorpdfstring{$\ast$}{*} {\bfseries m\+Data}
+\begin{DoxyCompactList}\small\item\em the current number of items in the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classssuds_1_1_array_list_a5b588e6e70c9a9b5cacbc7ce5b971490}\label{classssuds_1_1_array_list_a5b588e6e70c9a9b5cacbc7ce5b971490} 
+static const int {\bfseries ms\+Min\+Capacity} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class ssuds\+::\+Array\+List$<$ T $>$}
+A dynamic array implementation for storing alements of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of elements stored in the array.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classssuds_1_1_array_list_a3a7c9bd58748ea361ca69b45c1c66681}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!append@{append}}
+\index{append@{append}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_a3a7c9bd58748ea361ca69b45c1c66681} 
+template$<$class T$>$ \\
+void \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::append (\begin{DoxyParamCaption}\item[{const T \&}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Appends an element to the end of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & the element to append to the list\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classssuds_1_1_array_list_a78b660cd011f7d236e41e8602412072a}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!at@{at}}
+\index{at@{at}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_a78b660cd011f7d236e41e8602412072a} 
+template$<$class T$>$ \\
+T \& \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::at (\begin{DoxyParamCaption}\item[{const unsigned int}]{index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesses the element at the given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the element at the specifed index
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_a29d38b6e2574880f07422497f468ddd8}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_a29d38b6e2574880f07422497f468ddd8} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns an iterator pointing to the first element of the list 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_a4e9f0d67b921ddde2da06bdef3012ca8}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_a4e9f0d67b921ddde2da06bdef3012ca8} 
+template$<$class T$>$ \\
+unsigned int \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current capacity of the list. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_a807800c2ae6c98f36604c1e5a03ea8ca}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!end@{end}}
+\index{end@{end}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_a807800c2ae6c98f36604c1e5a03ea8ca} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{classssuds_1_1_array_list_1_1_array_list_iterator}{Array\+List\+Iterator}} \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns an iterator pointing to the element after the last element 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_af8ea5f78a78d4c3dbdf66223a51172bd}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!find@{find}}
+\index{find@{find}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_af8ea5f78a78d4c3dbdf66223a51172bd} 
+template$<$class T$>$ \\
+int \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{val}{, }\item[{unsigned int}]{start\+\_\+index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds the first occurence of the specified element. starts from the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+{\em start\+\_\+index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_abd03aedf6acb7f37086d83a4b5ed9dd2}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_abd03aedf6acb7f37086d83a4b5ed9dd2} 
+template$<$class T$>$ \\
+void \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{const T \&}]{val}{, }\item[{unsigned int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserts and element at the specified index; if the list is full, the capacity is increased. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classssuds_1_1_array_list_aa04e39200150aa88efa95253e98d0667}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!remove\_all@{remove\_all}}
+\index{remove\_all@{remove\_all}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove\_all()}{remove\_all()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_aa04e39200150aa88efa95253e98d0667} 
+template$<$class T$>$ \\
+unsigned int \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::remove\+\_\+all (\begin{DoxyParamCaption}\item[{const T \&}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+removes all occurences of the specifed element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classssuds_1_1_array_list_a891330426da480ed1bbbfb29fb018b3a}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_a891330426da480ed1bbbfb29fb018b3a} 
+template$<$class T$>$ \\
+void \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::reserve (\begin{DoxyParamCaption}\item[{unsigned int}]{desired\+\_\+capacity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reserves a minimum capacity for the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desired\+\_\+capacity} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classssuds_1_1_array_list_adbcd61184deb92c36610e47b91a7b6d5}\index{ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}!size@{size}}
+\index{size@{size}!ssuds::ArrayList$<$ T $>$@{ssuds::ArrayList$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classssuds_1_1_array_list_adbcd61184deb92c36610e47b91a7b6d5} 
+template$<$class T$>$ \\
+unsigned int \mbox{\hyperlink{classssuds_1_1_array_list}{ssuds\+::\+Array\+List}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+the current \# of elements in the list 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/array\+\_\+list.\+h\end{DoxyCompactItemize}

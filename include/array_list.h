@@ -1,262 +1,295 @@
-#ifndef ARRAY_LIST_H
-#define ARRAY_LIST_H
-
-#include <iostream>
-#include <stdexcept>  // For std::out_of_range exception
+#pragma once
 #include <string>
-#include "person.h"   // Assuming you have this header for the Person class
+#include <stdexcept>
+#include <ostream>
+#include <cstring>
 
-namespace ssuds {
+namespace ssuds
+{
     /// <summary>
-    /// A dynamic array class that supports automatic resizing and various
-    /// methods for manipulating the data.
+    /// A dynamic array implementation for storing alements of type T.
     /// </summary>
-    /// <typeparam name="T">Type of elements stored in the array</typeparam>
-    template <typename T>
-    class ArrayList {
-    private:
-        T* mData;  // Pointer to the array data
-        unsigned int mSize;  // Current size of the array (number of elements)
-        unsigned int mCapacity;  // Current capacity of the array
+    /// <typeparam name="T">The type of elements stored in the array.</typeparam>
+    template <class T>
+    class ArrayList
+    {
+    protected:
+        static const int msMinCapacity = 5;///The minimum initial capacity of the list.
+        unsigned int mCapacity;///the current capacity of the list.
+        unsigned int mSize;///the current number of items in the list.
+        unsigned char* mData;///a pointer to the raw memory where elements are stored.
 
     public:
-        /// <summary>
-        /// Constructs an ArrayList with an initial capacity
-        /// </summary>
-        /// <param name="initialCapacity">Initial Capacity of the array (default is 10).</param>
-        ArrayList(unsigned int initialCapacity = 10)
-            : mSize(0), mCapacity(initialCapacity) {
-            mData = new T[mCapacity];
+        ArrayList() : mSize(0), mCapacity(msMinCapacity), mData(nullptr) {
+            mData = new unsigned char[mCapacity * sizeof(T)];
         }
 
-        /// <summary>
-        /// Destroys the ArrayList, releasing the allocated memory.
-        /// </summary>
-        ~ArrayList() {
+        ~ArrayList()
+        {
             delete[] mData;
         }
         /// <summary>
-        /// Copy constructor for creating a new ArrayList as a copy of another.
+        /// Appends an element to the end of the list
         /// </summary>
-        /// <param name="other">The ArrayList to copy</param>
-        ArrayList(const ArrayList<T>& other)
-            : mSize(other.mSize), mCapacity(other.mCapacity) {
-            mData = new T[mCapacity];
-            for (unsigned int i = 0; i < mSize; i++) {
-                mData[i] = other.mData[i];
+        /// <param name="val">the element to append to the list</param>
+        void append(const T& val)
+        {
+            grow();
+            memcpy(&mData[mSize * sizeof(T)], &val, sizeof(T));
+            mSize++;
+        }
+        /// <summary>
+        /// Accesses the element at the given index
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>A reference to the element at the specifed index</returns>
+        T& at(const unsigned int index) const
+        {
+            if (index >= mSize)
+                throw std::out_of_range("Invalid index");
+            return *(reinterpret_cast<T*>(&mData[index * sizeof(T)]));
+        }
+        /// <summary>
+        /// Gets the current capacity of the list.
+        /// </summary>
+        /// <returns></returns>
+        unsigned int capacity() const { return mCapacity; }  // Capacity function
+        /// <summary>
+        /// clears the list by deleting the underlying ddata and resetting size and capacity.
+        /// </summary>
+        void clear()
+        {
+            delete[] mData;
+            mData = nullptr;
+            mSize = 0;
+            mCapacity = 0;
+        }
+        /// <summary>
+        /// Inserts and element at the specified index; if the list is full, 
+        /// the capacity is increased.
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="index"></param>
+        void insert(const T& val, unsigned int index)
+        {
+            if (index > mSize)  // Prevent invalid insert positions
+                throw std::out_of_range("Invalid index");
+            grow();
+            memcpy(&mData[(index + 1) * sizeof(T)], &mData[index * sizeof(T)], (mSize - index) * sizeof(T));
+            memcpy(&mData[index * sizeof(T)], &val, sizeof(T));
+            mSize++;
+        }
+        /// <summary>
+        /// Finds the first occurence of the specified element.
+        /// starts from the specified index.
+        /// </summary>
+        /// <param name="val"></param>
+        /// <param name="start_index"></param>
+        /// <returns></returns>
+        int find(const T& val, unsigned int start_index = 0)
+        {
+            if (start_index >= mSize)
+                return -1;  // If starting index is out of bounds, return -1
+
+            for (unsigned int i = start_index; i < mSize; ++i)
+            {
+                T& item = at(i);
+                if (item == val)  // If the item at index i matches 'val'
+                    return i;
             }
+            return -1;  // Return -1 if 'val' is not found
         }
 
         /// <summary>
-        /// Assignment operator for copying data from one ArrayList to another
+        /// Reserves a minimum capacity for the list
         /// </summary>
-        /// <param name="other">The ArrayList to copy</param>
-        /// <returns>A reference to the current ArrayList.</returns>
-        ArrayList<T>& operator=(const ArrayList<T>& other) {
-            if (this != &other) {
+        /// <param name="desired_capacity"></param>
+        void reserve(unsigned int desired_capacity)
+        {
+            if (desired_capacity > mCapacity)
+            {
+                unsigned char* temp_array = new unsigned char[desired_capacity * sizeof(T)];
+                memset(temp_array, 0, sizeof(T) * desired_capacity);
+                memcpy(temp_array, mData, mSize * sizeof(T));
                 delete[] mData;
-                mSize = other.mSize;
-                mCapacity = other.mCapacity;
-                mData = new T[mCapacity];
-                for (unsigned int i = 0; i < mSize; i++) {
-                    mData[i] = other.mData[i];
-                }
-            }
-            return *this;
-        }
-
-        /// <summary>
-        /// Gets the current # of elements in the ArrayList.
-        /// </summary>
-        /// <returns>The current size of the ArrayList.</returns>
-        unsigned int size() const {
-            return mSize;
-        }
-        
-        /// <summary>
-        ///Gets the current capacity of the ArrayList
-        /// </summary>
-        /// <returns>The current capacity of the ArrayList</returns>
-        unsigned int capacity() const {
-            return mCapacity;
-        }
-
-        /// <summary>
-        /// Reserves space for a larger capacity if needed
-        /// </summary>
-        /// <param name="newCapacity">the new capacity for the ArrayList</param>
-        void reserve(unsigned int newCapacity) {
-            if (newCapacity > mCapacity) {
-                resize(newCapacity);
+                mData = temp_array;
+                mCapacity = desired_capacity;
             }
         }
-
         /// <summary>
-        /// Resizes the ArrayList to the specified new capacity
+        /// the current # of elements in the list
         /// </summary>
-        /// <param name="newCapacity">The new capacity for the ArrayList.</param>
-        void resize(unsigned int newCapacity) {
-            if (newCapacity == 0) {
-                throw std::invalid_argument("New capacity must be greater than zero.");
+        /// <returns></returns>
+        unsigned int size() const { return mSize; }
+        /// <summary>
+        /// an iterator class for traversing the elements in the ArrayList
+        /// </summary>
+        class ArrayListIterator
+        {
+        private:
+            ArrayList<T>* mArrayList;///Pointer to the ArrayList being iterated.
+            unsigned int mIndex;///The current index in the iteration.
+
+        public:
+            ArrayListIterator(ArrayList<T>* arrayList, unsigned int index)
+                : mArrayList(arrayList), mIndex(index) {
             }
 
-            T* newData = new T[newCapacity];
-            for (unsigned int i = 0; i < mSize; i++) {
-                newData[i] = mData[i];
+            T& operator*() const
+            {
+                return *(reinterpret_cast<T*>(&mArrayList->mData[mIndex * sizeof(T)]));
             }
-            delete[] mData;
-            mData = newData;
-            mCapacity = newCapacity;
-        }
 
-        /// <summary>
-        /// Appends an item to the end of the ArrayList.
-        /// </summary>
-        /// <param name="item"the item to append></param>
-        void append(const T& item) {
-            if (mSize == mCapacity) {
-                resize(mCapacity * 2);
+            T* operator->() const
+            {
+                return &(operator*());
             }
-            mData[mSize++] = item;
-        }
-        /// <summary>
-        /// Prepends an item to the beginning of the ArrayList.
-        /// </summary>
-        /// <param name="item">the item to prepend</param>
-        void prepend(const T& item) {
-            if (mSize == mCapacity) {
-                resize(mCapacity * 2);
-            }
-            for (unsigned int i = mSize; i > 0; --i) {
-                mData[i] = mData[i - 1];
-            }
-            mData[0] = item;
-            mSize++;
-        }
 
-        /// <summary>
-        /// Inserts an item at a specified index in the ArrayList.
-        /// </summary>
-        /// <param name="item">the item to insert</param>
-        /// <param name="index">the index at which to insert the item.</param>
-        void insert(const T& item, unsigned int index) {
-            if (index > mSize) {
-                throw std::out_of_range("Index out of range");
+            ArrayListIterator& operator++()
+            {
+                mIndex++;
+                return *this;
             }
-            if (mSize == mCapacity) {
-                resize(mCapacity * 2);
-            }
-            for (unsigned int i = mSize; i > index; --i) {
-                mData[i] = mData[i - 1];
-            }
-            mData[index] = item;
-            mSize++;
-        }
 
-        /// <summary>
-        /// Gets the item at a specific index
-        /// </summary>
-        /// <param name="index">the index if the item to retrieve</param>
-        /// <returns>the item at the specified index.</returns>
-        T& at(unsigned int index) {
-            if (index >= mSize) {
-                throw std::out_of_range("Index out of range");
+            ArrayListIterator operator++(int)
+            {
+                ArrayListIterator temp = *this;
+                ++(*this);
+                return temp;
             }
-            return mData[index];
-        }
-        /// <summary>
-        /// Get the item at a specified index (const version)
-        /// </summary>
-        /// <param name="index">the index of the item to retrieve</param>
-        /// <returns>the item at the specified index</returns>
-        const T& at(unsigned int index) const {
-            if (index >= mSize) {
-                throw std::out_of_range("Index out of range");
-            }
-            return mData[index];
-        }
 
+            ArrayListIterator& operator--()
+            {
+                mIndex--;
+                return *this;
+            }
+
+            ArrayListIterator operator--(int)
+            {
+                ArrayListIterator temp = *this;
+                --(*this);
+                return temp;
+            }
+
+            ArrayListIterator operator+(int n) const
+            {
+                ArrayListIterator temp = *this;
+                temp.mIndex += n;
+                return temp;
+            }
+
+            bool operator==(const ArrayListIterator& other) const
+            {
+                return mArrayList == other.mArrayList && mIndex == other.mIndex;
+            }
+
+            bool operator!=(const ArrayListIterator& other) const
+            {
+                return !(*this == other);
+            }
+        };
         /// <summary>
-        /// Removes the item at the specified index
+        /// returns an iterator pointing to the first element of the list
         /// </summary>
-        /// <param name="index">the index of the item to remove</param>
-        /// <returns>the removed item</returns>
-        T remove(unsigned int index) {
-            if (index >= mSize) {
-                throw std::out_of_range("Index out of range");
-            }
-            T removedItem = mData[index];
-            for (unsigned int i = index; i < mSize - 1; i++) {
-                mData[i] = mData[i + 1];
-            }
-            mSize--;
-            if (mSize <= mCapacity / 4) {
-                resize(mCapacity / 2);
-            }
-            return removedItem;
+        /// <returns></returns>
+        ArrayListIterator begin()
+        {
+            return ArrayListIterator(this, 0);
         }
         /// <summary>
-        /// Removes all instances of a specific value from the ArrayList
+        /// returns an  iterator pointing to the element after the last element
         /// </summary>
-        /// <param name="value">the value to remove</param>
-        /// <returns>the number of items removed</returns>
-        unsigned int remove_all(const T& value) {
+        /// <returns></returns>
+        ArrayListIterator end()
+        {
+            return ArrayListIterator(this, mSize);
+        }
+        /// <summary>
+        /// removes all occurences of the specifed element
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        unsigned int remove_all(const T& val)
+        {
             unsigned int count = 0;
-            for (unsigned int i = 0; i < mSize;) {
-                if (mData[i] == value) {
-                    remove(i);
+            unsigned int i = 0;
+
+            // Traverse the list to find occurrences of 'val'
+            while (i < mSize)
+            {
+                if (at(i) == val)
+                {
+                    // Shift elements left to remove the current element
+                    for (unsigned int j = i; j < mSize - 1; ++j)
+                    {
+                        memcpy(&mData[j * sizeof(T)], &mData[(j + 1) * sizeof(T)], sizeof(T));
+                    }
+                    mSize--;
                     count++;
                 }
-                else {
+                else
+                {
                     ++i;
                 }
             }
-            return count;
-        }
 
-        /// <summary>
-        /// finds the index of the first occurence of a value
-        /// </summary>
-        /// <param name="value">The value to search for</param>
-        /// <param name="startIndex">The index from which to start searching (default is 0)</param>
-        /// <returns>The index of the first occurence of the value, or -1 if not found.</returns>
-        int find(const T& value, unsigned int startIndex = 0) const {
-            for (unsigned int i = startIndex; i < mSize; i++) {
-                if (mData[i] == value) {
-                    return i;
-                }
+            // Optionally, shrink the capacity if needed
+            if (mSize < mCapacity / 4)
+            {
+                shrink();
             }
-            return -1;  // Not found
+
+            return count;  // Return the number of removed elements
         }
 
         /// <summary>
-        /// Outputs the ArrayList to a stream
+        /// Shrinks the capacity of the list to fit its size
         /// </summary>
-        /// <param name="os">the outout stream</param>
-        void output(std::ostream& os) const {
-            os << "[";
-            for (unsigned int i = 0; i < mSize; i++) {
-                os << mData[i];
-                if (i < mSize - 1) {
-                    os << ", ";
-                }
+
+        void shrink()
+        {
+            // If the size is much smaller than the capacity, reduce the capacity
+            if (mCapacity > msMinCapacity && mSize < mCapacity / 4)
+            {
+                unsigned char* new_array = new unsigned char[mSize * sizeof(T)];
+                memcpy(new_array, mData, mSize * sizeof(T));
+                delete[] mData;
+                mData = new_array;
+                mCapacity = mSize;
             }
-            os << "]";
         }
 
+    protected:
         /// <summary>
-        /// Non-member output operator for ArrayList
+        /// Grows the capacity of the list if its full; the capacity is doubled if its full.
         /// </summary>
-        /// <param name="os">the output stream</param>
-        /// <param name="list">the ArrayList to output</param>
-        /// <returns>the output stream</returns>
+        void grow()
+        {
+            if (mSize == mCapacity)
+            {
+                unsigned char* new_array = nullptr;
+                if (mCapacity == 0)
+                {
+                    new_array = new unsigned char[msMinCapacity * sizeof(T)];
+                    memset(new_array, 0, msMinCapacity * sizeof(T));
+                }
+                else
+                {
+                    new_array = new unsigned char[(mCapacity * 2) * sizeof(T)];
+                    memset(new_array, 0, (mCapacity * 2) * sizeof(T));
+                }
 
-        friend std::ostream& operator<<(std::ostream& os, const ArrayList<T>& list) {
-            list.output(os);
-            return os;
+                if (mData != nullptr)
+                {
+                    memcpy(new_array, mData, sizeof(T) * mSize);
+                    delete[] mData;
+                }
+
+                mData = new_array;
+                mCapacity = (mCapacity == 0) ? msMinCapacity : mCapacity * 2;
+            }
         }
+        
+
     };
-
-} // namespace ssuds
-
-#endif
+}

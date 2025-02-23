@@ -135,7 +135,6 @@
   <ItemGroup>
     <ClCompile Include="..\src\examples\person.cpp" />
     <ClCompile Include="..\src\person_database.cpp" />
-    <ClCompile Include="lab02_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\array_list.h" />

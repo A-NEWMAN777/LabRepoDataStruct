@@ -103,167 +103,117 @@ $(function(){initNavTree('classssuds_1_1_array_list.html',''); initResizable(tru
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classssuds_1_1_array_list-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ssuds::ArrayList&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A dynamic array class that supports automatic resizing and various methods for manipulating the data.  
+<p>A dynamic array implementation for storing alements of type T.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="array__list_8h_source.html">array_list.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">an iterator class for traversing the elements in the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array implementation for storing alements of type T.">ArrayList</a>  <a href="classssuds_1_1_array_list_1_1_array_list_iterator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:add3212c1c8a78b2e70c8670bed6b29d8" id="r_add3212c1c8a78b2e70c8670bed6b29d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add3212c1c8a78b2e70c8670bed6b29d8">ArrayList</a> (unsigned int initialCapacity=10)</td></tr>
-<tr class="memdesc:add3212c1c8a78b2e70c8670bed6b29d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> with an initial capacity.  <br /></td></tr>
-<tr class="separator:add3212c1c8a78b2e70c8670bed6b29d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a334e1f8861f34a0da7230aeec7571e3c" id="r_a334e1f8861f34a0da7230aeec7571e3c"><td class="memItemLeft" align="right" valign="top"><a id="a334e1f8861f34a0da7230aeec7571e3c" name="a334e1f8861f34a0da7230aeec7571e3c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~ArrayList</b> ()</td></tr>
-<tr class="memdesc:a334e1f8861f34a0da7230aeec7571e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>, releasing the allocated memory. <br /></td></tr>
-<tr class="separator:a334e1f8861f34a0da7230aeec7571e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5bd0551a613aec677a7dd4c9d764e6b" id="r_aa5bd0551a613aec677a7dd4c9d764e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5bd0551a613aec677a7dd4c9d764e6b">ArrayList</a> (const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp;other)</td></tr>
-<tr class="memdesc:aa5bd0551a613aec677a7dd4c9d764e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for creating a new <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> as a copy of another.  <br /></td></tr>
-<tr class="separator:aa5bd0551a613aec677a7dd4c9d764e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6334ec5abee5dbc48aafcdf46a390670" id="r_a6334ec5abee5dbc48aafcdf46a390670"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6334ec5abee5dbc48aafcdf46a390670">operator=</a> (const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp;other)</td></tr>
-<tr class="memdesc:a6334ec5abee5dbc48aafcdf46a390670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator for copying data from one <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to another.  <br /></td></tr>
-<tr class="separator:a6334ec5abee5dbc48aafcdf46a390670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbcd61184deb92c36610e47b91a7b6d5" id="r_adbcd61184deb92c36610e47b91a7b6d5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbcd61184deb92c36610e47b91a7b6d5">size</a> () const</td></tr>
-<tr class="memdesc:adbcd61184deb92c36610e47b91a7b6d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current # of elements in the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.  <br /></td></tr>
-<tr class="separator:adbcd61184deb92c36610e47b91a7b6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17073605b1b8e31ca126e61db633c57d" id="r_a17073605b1b8e31ca126e61db633c57d"><td class="memItemLeft" align="right" valign="top"><a id="a17073605b1b8e31ca126e61db633c57d" name="a17073605b1b8e31ca126e61db633c57d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ArrayList</b> ()</td></tr>
+<tr class="memdesc:a17073605b1b8e31ca126e61db633c57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">a pointer to the raw memory where elements are stored. <br /></td></tr>
+<tr class="separator:a17073605b1b8e31ca126e61db633c57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7c9bd58748ea361ca69b45c1c66681" id="r_a3a7c9bd58748ea361ca69b45c1c66681"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a7c9bd58748ea361ca69b45c1c66681">append</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:a3a7c9bd58748ea361ca69b45c1c66681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an element to the end of the list.  <br /></td></tr>
+<tr class="separator:a3a7c9bd58748ea361ca69b45c1c66681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b660cd011f7d236e41e8602412072a" id="r_a78b660cd011f7d236e41e8602412072a"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78b660cd011f7d236e41e8602412072a">at</a> (const unsigned int index) const</td></tr>
+<tr class="memdesc:a78b660cd011f7d236e41e8602412072a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the element at the given index.  <br /></td></tr>
+<tr class="separator:a78b660cd011f7d236e41e8602412072a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e9f0d67b921ddde2da06bdef3012ca8" id="r_a4e9f0d67b921ddde2da06bdef3012ca8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e9f0d67b921ddde2da06bdef3012ca8">capacity</a> () const</td></tr>
-<tr class="memdesc:a4e9f0d67b921ddde2da06bdef3012ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current capacity of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.  <br /></td></tr>
+<tr class="memdesc:a4e9f0d67b921ddde2da06bdef3012ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current capacity of the list.  <br /></td></tr>
 <tr class="separator:a4e9f0d67b921ddde2da06bdef3012ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fca20e52804b02b72013d4db70e8946" id="r_a2fca20e52804b02b72013d4db70e8946"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fca20e52804b02b72013d4db70e8946">reserve</a> (unsigned int newCapacity)</td></tr>
-<tr class="memdesc:a2fca20e52804b02b72013d4db70e8946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves space for a larger capacity if needed.  <br /></td></tr>
-<tr class="separator:a2fca20e52804b02b72013d4db70e8946"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21804c4f7c9b642e07d1df2a20542ab6" id="r_a21804c4f7c9b642e07d1df2a20542ab6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21804c4f7c9b642e07d1df2a20542ab6">resize</a> (unsigned int newCapacity)</td></tr>
-<tr class="memdesc:a21804c4f7c9b642e07d1df2a20542ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to the specified new capacity.  <br /></td></tr>
-<tr class="separator:a21804c4f7c9b642e07d1df2a20542ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a022f6327709060fe26bd05dc6b02b480" id="r_a022f6327709060fe26bd05dc6b02b480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a022f6327709060fe26bd05dc6b02b480">append</a> (const T &amp;item)</td></tr>
-<tr class="memdesc:a022f6327709060fe26bd05dc6b02b480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an item to the end of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.  <br /></td></tr>
-<tr class="separator:a022f6327709060fe26bd05dc6b02b480"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4898f36024650dee875d67083f344481" id="r_a4898f36024650dee875d67083f344481"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4898f36024650dee875d67083f344481">prepend</a> (const T &amp;item)</td></tr>
-<tr class="memdesc:a4898f36024650dee875d67083f344481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends an item to the beginning of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.  <br /></td></tr>
-<tr class="separator:a4898f36024650dee875d67083f344481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace37c231d00d22c7bf5b3ec0ba35a40a" id="r_ace37c231d00d22c7bf5b3ec0ba35a40a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace37c231d00d22c7bf5b3ec0ba35a40a">insert</a> (const T &amp;item, unsigned int index)</td></tr>
-<tr class="memdesc:ace37c231d00d22c7bf5b3ec0ba35a40a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an item at a specified index in the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.  <br /></td></tr>
-<tr class="separator:ace37c231d00d22c7bf5b3ec0ba35a40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e97a1d7598a6631ef14b55bf918c6a8" id="r_a6e97a1d7598a6631ef14b55bf918c6a8"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e97a1d7598a6631ef14b55bf918c6a8">at</a> (unsigned int index)</td></tr>
-<tr class="memdesc:a6e97a1d7598a6631ef14b55bf918c6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the item at a specific index.  <br /></td></tr>
-<tr class="separator:a6e97a1d7598a6631ef14b55bf918c6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13e2ee234e44d794782357f3da3594c6" id="r_a13e2ee234e44d794782357f3da3594c6"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13e2ee234e44d794782357f3da3594c6">at</a> (unsigned int index) const</td></tr>
-<tr class="memdesc:a13e2ee234e44d794782357f3da3594c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the item at a specified index (const version)  <br /></td></tr>
-<tr class="separator:a13e2ee234e44d794782357f3da3594c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfa88e339ab66bab61b172d12814a0aa" id="r_abfa88e339ab66bab61b172d12814a0aa"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfa88e339ab66bab61b172d12814a0aa">remove</a> (unsigned int index)</td></tr>
-<tr class="memdesc:abfa88e339ab66bab61b172d12814a0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the item at the specified index.  <br /></td></tr>
-<tr class="separator:abfa88e339ab66bab61b172d12814a0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dc7d4db6e15ad5112e776c82d319a8a" id="r_a4dc7d4db6e15ad5112e776c82d319a8a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dc7d4db6e15ad5112e776c82d319a8a">remove_all</a> (const T &amp;value)</td></tr>
-<tr class="memdesc:a4dc7d4db6e15ad5112e776c82d319a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all instances of a specific value from the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.  <br /></td></tr>
-<tr class="separator:a4dc7d4db6e15ad5112e776c82d319a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb0b61bc72cf8b2e55c8c3101e6e1215" id="r_acb0b61bc72cf8b2e55c8c3101e6e1215"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb0b61bc72cf8b2e55c8c3101e6e1215">find</a> (const T &amp;value, unsigned int startIndex=0) const</td></tr>
-<tr class="memdesc:acb0b61bc72cf8b2e55c8c3101e6e1215"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds the index of the first occurence of a value  <br /></td></tr>
-<tr class="separator:acb0b61bc72cf8b2e55c8c3101e6e1215"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fb940eeacbdef50b05dac3f2e681ab8" id="r_a8fb940eeacbdef50b05dac3f2e681ab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fb940eeacbdef50b05dac3f2e681ab8">output</a> (std::ostream &amp;os) const</td></tr>
-<tr class="memdesc:a8fb940eeacbdef50b05dac3f2e681ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to a stream.  <br /></td></tr>
-<tr class="separator:a8fb940eeacbdef50b05dac3f2e681ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f9aaf226d5c6fde758546102150271" id="r_a29f9aaf226d5c6fde758546102150271"><td class="memItemLeft" align="right" valign="top"><a id="a29f9aaf226d5c6fde758546102150271" name="a29f9aaf226d5c6fde758546102150271"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memdesc:a29f9aaf226d5c6fde758546102150271"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the list by deleting the underlying ddata and resetting size and capacity. <br /></td></tr>
+<tr class="separator:a29f9aaf226d5c6fde758546102150271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd03aedf6acb7f37086d83a4b5ed9dd2" id="r_abd03aedf6acb7f37086d83a4b5ed9dd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd03aedf6acb7f37086d83a4b5ed9dd2">insert</a> (const T &amp;val, unsigned int index)</td></tr>
+<tr class="memdesc:abd03aedf6acb7f37086d83a4b5ed9dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts and element at the specified index; if the list is full, the capacity is increased.  <br /></td></tr>
+<tr class="separator:abd03aedf6acb7f37086d83a4b5ed9dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ea5f78a78d4c3dbdf66223a51172bd" id="r_af8ea5f78a78d4c3dbdf66223a51172bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8ea5f78a78d4c3dbdf66223a51172bd">find</a> (const T &amp;val, unsigned int start_index=0)</td></tr>
+<tr class="memdesc:af8ea5f78a78d4c3dbdf66223a51172bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first occurence of the specified element. starts from the specified index.  <br /></td></tr>
+<tr class="separator:af8ea5f78a78d4c3dbdf66223a51172bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891330426da480ed1bbbfb29fb018b3a" id="r_a891330426da480ed1bbbfb29fb018b3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a891330426da480ed1bbbfb29fb018b3a">reserve</a> (unsigned int desired_capacity)</td></tr>
+<tr class="memdesc:a891330426da480ed1bbbfb29fb018b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves a minimum capacity for the list.  <br /></td></tr>
+<tr class="separator:a891330426da480ed1bbbfb29fb018b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbcd61184deb92c36610e47b91a7b6d5" id="r_adbcd61184deb92c36610e47b91a7b6d5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbcd61184deb92c36610e47b91a7b6d5">size</a> () const</td></tr>
+<tr class="memdesc:adbcd61184deb92c36610e47b91a7b6d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">the current # of elements in the list  <br /></td></tr>
+<tr class="separator:adbcd61184deb92c36610e47b91a7b6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d38b6e2574880f07422497f468ddd8" id="r_a29d38b6e2574880f07422497f468ddd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29d38b6e2574880f07422497f468ddd8">begin</a> ()</td></tr>
+<tr class="memdesc:a29d38b6e2574880f07422497f468ddd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an iterator pointing to the first element of the list  <br /></td></tr>
+<tr class="separator:a29d38b6e2574880f07422497f468ddd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807800c2ae6c98f36604c1e5a03ea8ca" id="r_a807800c2ae6c98f36604c1e5a03ea8ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a807800c2ae6c98f36604c1e5a03ea8ca">end</a> ()</td></tr>
+<tr class="memdesc:a807800c2ae6c98f36604c1e5a03ea8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an iterator pointing to the element after the last element  <br /></td></tr>
+<tr class="separator:a807800c2ae6c98f36604c1e5a03ea8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04e39200150aa88efa95253e98d0667" id="r_aa04e39200150aa88efa95253e98d0667"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa04e39200150aa88efa95253e98d0667">remove_all</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:aa04e39200150aa88efa95253e98d0667"><td class="mdescLeft">&#160;</td><td class="mdescRight">removes all occurences of the specifed element  <br /></td></tr>
+<tr class="separator:aa04e39200150aa88efa95253e98d0667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae18613568842335b1d115958d2f34bab" id="r_ae18613568842335b1d115958d2f34bab"><td class="memItemLeft" align="right" valign="top"><a id="ae18613568842335b1d115958d2f34bab" name="ae18613568842335b1d115958d2f34bab"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>shrink</b> ()</td></tr>
+<tr class="memdesc:ae18613568842335b1d115958d2f34bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrinks the capacity of the list to fit its size. <br /></td></tr>
+<tr class="separator:ae18613568842335b1d115958d2f34bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a36917218da599a93ed8102fd6a5f6a50" id="r_a36917218da599a93ed8102fd6a5f6a50"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36917218da599a93ed8102fd6a5f6a50">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp;list)</td></tr>
-<tr class="memdesc:a36917218da599a93ed8102fd6a5f6a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-member output operator for <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.  <br /></td></tr>
-<tr class="separator:a36917218da599a93ed8102fd6a5f6a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a07a02cc34fc7c9162e64e3c7a7d1a963" id="r_a07a02cc34fc7c9162e64e3c7a7d1a963"><td class="memItemLeft" align="right" valign="top"><a id="a07a02cc34fc7c9162e64e3c7a7d1a963" name="a07a02cc34fc7c9162e64e3c7a7d1a963"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>grow</b> ()</td></tr>
+<tr class="memdesc:a07a02cc34fc7c9162e64e3c7a7d1a963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grows the capacity of the list if its full; the capacity is doubled if its full. <br /></td></tr>
+<tr class="separator:a07a02cc34fc7c9162e64e3c7a7d1a963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac4487ae34800f88539054c3721568c10" id="r_ac4487ae34800f88539054c3721568c10"><td class="memItemLeft" align="right" valign="top"><a id="ac4487ae34800f88539054c3721568c10" name="ac4487ae34800f88539054c3721568c10"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mCapacity</b></td></tr>
+<tr class="memdesc:ac4487ae34800f88539054c3721568c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum initial capacity of the list. <br /></td></tr>
+<tr class="separator:ac4487ae34800f88539054c3721568c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f68ee08bdbaa2f26d017816e4e46e42" id="r_a8f68ee08bdbaa2f26d017816e4e46e42"><td class="memItemLeft" align="right" valign="top"><a id="a8f68ee08bdbaa2f26d017816e4e46e42" name="a8f68ee08bdbaa2f26d017816e4e46e42"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>mSize</b></td></tr>
+<tr class="memdesc:a8f68ee08bdbaa2f26d017816e4e46e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">the current capacity of the list. <br /></td></tr>
+<tr class="separator:a8f68ee08bdbaa2f26d017816e4e46e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab51f415e302012806b0d6cdfefc96b" id="r_aeab51f415e302012806b0d6cdfefc96b"><td class="memItemLeft" align="right" valign="top"><a id="aeab51f415e302012806b0d6cdfefc96b" name="aeab51f415e302012806b0d6cdfefc96b"></a>
+unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><b>mData</b></td></tr>
+<tr class="memdesc:aeab51f415e302012806b0d6cdfefc96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">the current number of items in the list. <br /></td></tr>
+<tr class="separator:aeab51f415e302012806b0d6cdfefc96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a5b588e6e70c9a9b5cacbc7ce5b971490" id="r_a5b588e6e70c9a9b5cacbc7ce5b971490"><td class="memItemLeft" align="right" valign="top"><a id="a5b588e6e70c9a9b5cacbc7ce5b971490" name="a5b588e6e70c9a9b5cacbc7ce5b971490"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><b>msMinCapacity</b> = 5</td></tr>
+<tr class="separator:a5b588e6e70c9a9b5cacbc7ce5b971490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
-class ssuds::ArrayList&lt; T &gt;</div><p>A dynamic array class that supports automatic resizing and various methods for manipulating the data. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class ssuds::ArrayList&lt; T &gt;</div><p>A dynamic array implementation for storing alements of type T. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>Type of elements stored in the array</td></tr>
+    <tr><td class="paramname">T</td><td>The type of elements stored in the array.</td></tr>
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="add3212c1c8a78b2e70c8670bed6b29d8" name="add3212c1c8a78b2e70c8670bed6b29d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add3212c1c8a78b2e70c8670bed6b29d8">&#9670;&#160;</a></span>ArrayList() <span class="overload">[1/2]</span></h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3a7c9bd58748ea361ca69b45c1c66681" name="a3a7c9bd58748ea361ca69b45c1c66681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7c9bd58748ea361ca69b45c1c66681">&#9670;&#160;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayList </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>initialCapacity</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructs an <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> with an initial capacity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">initialCapacity</td><td>Initial Capacity of the array (default is 10).</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa5bd0551a613aec677a7dd4c9d764e6b" name="aa5bd0551a613aec677a7dd4c9d764e6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5bd0551a613aec677a7dd4c9d764e6b">&#9670;&#160;</a></span>ArrayList() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::ArrayList </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Copy constructor for creating a new <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> as a copy of another. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to copy</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a022f6327709060fe26bd05dc6b02b480" name="a022f6327709060fe26bd05dc6b02b480"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a022f6327709060fe26bd05dc6b02b480">&#9670;&#160;</a></span>append()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -271,7 +221,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::append </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -282,18 +232,23 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Appends an item to the end of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>. </p>
-<p>&lt;param name="item"the item to append&gt;</p>
+<p>Appends an element to the end of the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>the element to append to the list</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a6e97a1d7598a6631ef14b55bf918c6a8" name="a6e97a1d7598a6631ef14b55bf918c6a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e97a1d7598a6631ef14b55bf918c6a8">&#9670;&#160;</a></span>at() <span class="overload">[1/2]</span></h2>
+<a id="a78b660cd011f7d236e41e8602412072a" name="a78b660cd011f7d236e41e8602412072a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b660cd011f7d236e41e8602412072a">&#9670;&#160;</a></span>at()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -301,43 +256,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">T &amp; <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::at </td>
           <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets the item at a specific index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>the index if the item to retrieve</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the item at the specified index.</dd></dl>
-
-</div>
-</div>
-<a id="a13e2ee234e44d794782357f3da3594c6" name="a13e2ee234e44d794782357f3da3594c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13e2ee234e44d794782357f3da3594c6">&#9670;&#160;</a></span>at() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const T &amp; <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::at </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype">const unsigned int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -348,14 +267,44 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the item at a specified index (const version) </p>
+<p>Accesses the element at the given index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>the index of the item to retrieve</td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the item at the specified index</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the element at the specifed index</dd></dl>
+
+</div>
+</div>
+<a id="a29d38b6e2574880f07422497f468ddd8" name="a29d38b6e2574880f07422497f468ddd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29d38b6e2574880f07422497f468ddd8">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns an iterator pointing to the first element of the list </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -365,7 +314,7 @@ template&lt;typename T&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -384,31 +333,27 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the current capacity of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The current capacity of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a></dd></dl>
+<p>Gets the current capacity of the list. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="acb0b61bc72cf8b2e55c8c3101e6e1215" name="acb0b61bc72cf8b2e55c8c3101e6e1215"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb0b61bc72cf8b2e55c8c3101e6e1215">&#9670;&#160;</a></span>find()</h2>
+<a id="a807800c2ae6c98f36604c1e5a03ea8ca" name="a807800c2ae6c98f36604c1e5a03ea8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807800c2ae6c98f36604c1e5a03ea8ca">&#9670;&#160;</a></span>end()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::find </td>
+          <td class="memname"><a class="el" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::end </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>startIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;) const</td>
         </tr>
       </table>
   </td>
@@ -418,25 +363,59 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>finds the index of the first occurence of a value </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value to search for</td></tr>
-    <tr><td class="paramname">startIndex</td><td>The index from which to start searching (default is 0)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The index of the first occurence of the value, or -1 if not found.</dd></dl>
+<p>returns an iterator pointing to the element after the last element </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="ace37c231d00d22c7bf5b3ec0ba35a40a" name="ace37c231d00d22c7bf5b3ec0ba35a40a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace37c231d00d22c7bf5b3ec0ba35a40a">&#9670;&#160;</a></span>insert()</h2>
+<a id="af8ea5f78a78d4c3dbdf66223a51172bd" name="af8ea5f78a78d4c3dbdf66223a51172bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ea5f78a78d4c3dbdf66223a51172bd">&#9670;&#160;</a></span>find()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>start_index</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the first occurence of the specified element. starts from the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td></td></tr>
+    <tr><td class="paramname">start_index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="abd03aedf6acb7f37086d83a4b5ed9dd2" name="abd03aedf6acb7f37086d83a4b5ed9dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd03aedf6acb7f37086d83a4b5ed9dd2">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -444,7 +423,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::insert </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span>, </td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -459,166 +438,24 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Inserts an item at a specified index in the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>. </p>
+<p>Inserts and element at the specified index; if the list is full, the capacity is increased. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>the item to insert</td></tr>
-    <tr><td class="paramname">index</td><td>the index at which to insert the item.</td></tr>
+    <tr><td class="paramname">val</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a6334ec5abee5dbc48aafcdf46a390670" name="a6334ec5abee5dbc48aafcdf46a390670"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6334ec5abee5dbc48aafcdf46a390670">&#9670;&#160;</a></span>operator=()</h2>
+<a id="aa04e39200150aa88efa95253e98d0667" name="aa04e39200150aa88efa95253e98d0667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04e39200150aa88efa95253e98d0667">&#9670;&#160;</a></span>remove_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp; <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Assignment operator for copying data from one <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to another. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>The <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to copy</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the current <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.</dd></dl>
-
-</div>
-</div>
-<a id="a8fb940eeacbdef50b05dac3f2e681ab8" name="a8fb940eeacbdef50b05dac3f2e681ab8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fb940eeacbdef50b05dac3f2e681ab8">&#9670;&#160;</a></span>output()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::output </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Outputs the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to a stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>the outout stream</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4898f36024650dee875d67083f344481" name="a4898f36024650dee875d67083f344481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4898f36024650dee875d67083f344481">&#9670;&#160;</a></span>prepend()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::prepend </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Prepends an item to the beginning of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">item</td><td>the item to prepend</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abfa88e339ab66bab61b172d12814a0aa" name="abfa88e339ab66bab61b172d12814a0aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfa88e339ab66bab61b172d12814a0aa">&#9670;&#160;</a></span>remove()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::remove </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes the item at the specified index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>the index of the item to remove</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the removed item</dd></dl>
-
-</div>
-</div>
-<a id="a4dc7d4db6e15ad5112e776c82d319a8a" name="a4dc7d4db6e15ad5112e776c82d319a8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dc7d4db6e15ad5112e776c82d319a8a">&#9670;&#160;</a></span>remove_all()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -626,7 +463,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">unsigned int <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::remove_all </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -637,24 +474,24 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Removes all instances of a specific value from the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>. </p>
+<p>removes all occurences of the specifed element </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>the value to remove</td></tr>
+    <tr><td class="paramname">val</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of items removed</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="a2fca20e52804b02b72013d4db70e8946" name="a2fca20e52804b02b72013d4db70e8946"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fca20e52804b02b72013d4db70e8946">&#9670;&#160;</a></span>reserve()</h2>
+<a id="a891330426da480ed1bbbfb29fb018b3a" name="a891330426da480ed1bbbfb29fb018b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a891330426da480ed1bbbfb29fb018b3a">&#9670;&#160;</a></span>reserve()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -662,7 +499,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::reserve </td>
           <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>newCapacity</em></span></td><td>)</td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>desired_capacity</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -673,45 +510,10 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reserves space for a larger capacity if needed. </p>
+<p>Reserves a minimum capacity for the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newCapacity</td><td>the new capacity for the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a21804c4f7c9b642e07d1df2a20542ab6" name="a21804c4f7c9b642e07d1df2a20542ab6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21804c4f7c9b642e07d1df2a20542ab6">&#9670;&#160;</a></span>resize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classssuds_1_1_array_list.html">ssuds::ArrayList</a>&lt; T &gt;::resize </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>newCapacity</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resizes the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to the specified new capacity. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newCapacity</td><td>The new capacity for the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.</td></tr>
+    <tr><td class="paramname">desired_capacity</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -724,7 +526,7 @@ template&lt;typename T&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -743,50 +545,8 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the current # of elements in the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The current size of the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>.</dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="a36917218da599a93ed8102fd6a5f6a50" name="a36917218da599a93ed8102fd6a5f6a50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36917218da599a93ed8102fd6a5f6a50">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classssuds_1_1_array_list.html">ArrayList</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>list</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Non-member output operator for <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">os</td><td>the output stream</td></tr>
-    <tr><td class="paramname">list</td><td>the <a class="el" href="classssuds_1_1_array_list.html" title="A dynamic array class that supports automatic resizing and various methods for manipulating the data.">ArrayList</a> to output</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the output stream</dd></dl>
+<p>the current # of elements in the list </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

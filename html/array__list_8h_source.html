@@ -105,242 +105,296 @@ $(function(){initNavTree('array__list_8h_source.html',''); initResizable(true); 
   <div class="headertitle"><div class="title">array_list.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ARRAY_LIST_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ARRAY_LIST_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// For std::out_of_range exception</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;person.h&quot;</span>   <span class="comment">// Assuming you have this header for the Person class</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>ssuds {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html">   16</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">ArrayList</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        T* mData;  <span class="comment">// Pointer to the array data</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mSize;  <span class="comment">// Current size of the array (number of elements)</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mCapacity;  <span class="comment">// Current capacity of the array</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>ssuds</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html">   14</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classssuds_1_1_array_list.html#a17073605b1b8e31ca126e61db633c57d">ArrayList</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> msMinCapacity = 5;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">   18</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">   19</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">   20</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">   27</a></span>        <a class="code hl_function" href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">ArrayList</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> initialCapacity = 10)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            : mSize(0), mCapacity(initialCapacity) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            mData = <span class="keyword">new</span> T[mCapacity];</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a17073605b1b8e31ca126e61db633c57d">   23</a></span>        <a class="code hl_function" href="classssuds_1_1_array_list.html#a17073605b1b8e31ca126e61db633c57d">ArrayList</a>() : <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>(0), <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a>(msMinCapacity), <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>(nullptr) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a> = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[<a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> * <span class="keyword">sizeof</span>(T)];</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_class" href="classssuds_1_1_array_list.html">~ArrayList</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keyword">delete</span>[] <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
-</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a334e1f8861f34a0da7230aeec7571e3c">   35</a></span>        <a class="code hl_function" href="classssuds_1_1_array_list.html#a334e1f8861f34a0da7230aeec7571e3c">~ArrayList</a>() {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keyword">delete</span>[] mData;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a3a7c9bd58748ea361ca69b45c1c66681">   35</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a3a7c9bd58748ea361ca69b45c1c66681">append</a>(<span class="keyword">const</span> T&amp; val)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_function" href="classssuds_1_1_array_list.html#a07a02cc34fc7c9162e64e3c7a7d1a963">grow</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            memcpy(&amp;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[<a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> * <span class="keyword">sizeof</span>(T)], &amp;val, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>++;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#aa5bd0551a613aec677a7dd4c9d764e6b">   42</a></span>        <a class="code hl_function" href="classssuds_1_1_array_list.html#aa5bd0551a613aec677a7dd4c9d764e6b">ArrayList</a>(<span class="keyword">const</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">ArrayList&lt;T&gt;</a>&amp; other)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            : mSize(other.mSize), mCapacity(other.mCapacity) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            mData = <span class="keyword">new</span> T[mCapacity];</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; mSize; i++) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                mData[i] = other.mData[i];</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a78b660cd011f7d236e41e8602412072a">   46</a></span>        T&amp; <a class="code hl_function" href="classssuds_1_1_array_list.html#a78b660cd011f7d236e41e8602412072a">at</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span> (index &gt;= <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Invalid index&quot;</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> *(<span class="keyword">reinterpret_cast&lt;</span>T*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[index * <span class="keyword">sizeof</span>(T)]));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a6334ec5abee5dbc48aafcdf46a390670">   55</a></span>        <a class="code hl_function" href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">ArrayList&lt;T&gt;</a>&amp; <a class="code hl_function" href="classssuds_1_1_array_list.html#a6334ec5abee5dbc48aafcdf46a390670">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">ArrayList&lt;T&gt;</a>&amp; other) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                <span class="keyword">delete</span>[] mData;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                mSize = other.mSize;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                mCapacity = other.mCapacity;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                mData = <span class="keyword">new</span> T[mCapacity];</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; mSize; i++) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    mData[i] = other.mData[i];</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a4e9f0d67b921ddde2da06bdef3012ca8">   56</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a4e9f0d67b921ddde2da06bdef3012ca8">capacity</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a>; }  <span class="comment">// Capacity function</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a29f9aaf226d5c6fde758546102150271">   60</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a29f9aaf226d5c6fde758546102150271">clear</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">delete</span>[] <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> = 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> = 0;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
 </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#adbcd61184deb92c36610e47b91a7b6d5">   72</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#adbcd61184deb92c36610e47b91a7b6d5">size</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">return</span> mSize;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#abd03aedf6acb7f37086d83a4b5ed9dd2">   73</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#abd03aedf6acb7f37086d83a4b5ed9dd2">insert</a>(<span class="keyword">const</span> T&amp; val, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">if</span> (index &gt; <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>)  <span class="comment">// Prevent invalid insert positions</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Invalid index&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_function" href="classssuds_1_1_array_list.html#a07a02cc34fc7c9162e64e3c7a7d1a963">grow</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            memcpy(&amp;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[(index + 1) * <span class="keyword">sizeof</span>(T)], &amp;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[index * <span class="keyword">sizeof</span>(T)], (<a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> - index) * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            memcpy(&amp;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[index * <span class="keyword">sizeof</span>(T)], &amp;val, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>++;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
 </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        </div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a4e9f0d67b921ddde2da06bdef3012ca8">   80</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a4e9f0d67b921ddde2da06bdef3012ca8">capacity</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">return</span> mCapacity;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#af8ea5f78a78d4c3dbdf66223a51172bd">   89</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#af8ea5f78a78d4c3dbdf66223a51172bd">find</a>(<span class="keyword">const</span> T&amp; val, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start_index = 0)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">if</span> (start_index &gt;= <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keywordflow">return</span> -1;  <span class="comment">// If starting index is out of bounds, return -1</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = start_index; i &lt; <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>; ++i)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                T&amp; item = <a class="code hl_function" href="classssuds_1_1_array_list.html#a78b660cd011f7d236e41e8602412072a">at</a>(i);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keywordflow">if</span> (item == val)  <span class="comment">// If the item at index i matches &#39;val&#39;</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">return</span> -1;  <span class="comment">// Return -1 if &#39;val&#39; is not found</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
 </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a2fca20e52804b02b72013d4db70e8946">   88</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a2fca20e52804b02b72013d4db70e8946">reserve</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> newCapacity) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span> (newCapacity &gt; mCapacity) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <a class="code hl_function" href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">resize</a>(newCapacity);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a891330426da480ed1bbbfb29fb018b3a">  107</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a891330426da480ed1bbbfb29fb018b3a">reserve</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> desired_capacity)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">if</span> (desired_capacity &gt; <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a>)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* temp_array = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[desired_capacity * <span class="keyword">sizeof</span>(T)];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                memset(temp_array, 0, <span class="keyword">sizeof</span>(T) * desired_capacity);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                memcpy(temp_array, <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>, <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="keyword">delete</span>[] <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a> = temp_array;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> = desired_capacity;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">   98</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">resize</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> newCapacity) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> (newCapacity == 0) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;New capacity must be greater than zero.&quot;</span>);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            T* newData = <span class="keyword">new</span> T[newCapacity];</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; mSize; i++) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                newData[i] = mData[i];</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keyword">delete</span>[] mData;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            mData = newData;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            mCapacity = newCapacity;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#adbcd61184deb92c36610e47b91a7b6d5">  123</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#adbcd61184deb92c36610e47b91a7b6d5">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>; }</div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="};">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">  127</a></span>        <span class="keyword">class </span><a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <a class="code hl_function" href="classssuds_1_1_array_list.html#a17073605b1b8e31ca126e61db633c57d">ArrayList&lt;T&gt;</a>* mArrayList;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mIndex;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">  134</a></span>            <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a>(<a class="code hl_function" href="classssuds_1_1_array_list.html#a17073605b1b8e31ca126e61db633c57d">ArrayList&lt;T&gt;</a>* arrayList, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                : mArrayList(arrayList), mIndex(index) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            }</div>
 </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a022f6327709060fe26bd05dc6b02b480">  116</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a022f6327709060fe26bd05dc6b02b480">append</a>(<span class="keyword">const</span> T&amp; item) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">if</span> (mSize == mCapacity) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                <a class="code hl_function" href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">resize</a>(mCapacity * 2);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            }</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            mData[mSize++] = item;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            T&amp; operator*()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <span class="keywordflow">return</span> *(<span class="keyword">reinterpret_cast&lt;</span>T*<span class="keyword">&gt;</span>(&amp;mArrayList-&gt;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[mIndex * <span class="keyword">sizeof</span>(T)]));</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            T* operator-&gt;()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                <span class="keywordflow">return</span> &amp;(operator*());</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a>&amp; operator++()</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                mIndex++;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a> operator++(<span class="keywordtype">int</span>)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a> temp = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                ++(*this);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a>&amp; operator--()</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                mIndex--;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a> operator--(<span class="keywordtype">int</span>)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a> temp = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                --(*this);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a> operator+(<span class="keywordtype">int</span> n)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a> temp = *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                temp.mIndex += n;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                <span class="keywordflow">return</span> mArrayList == other.mArrayList &amp;&amp; mIndex == other.mIndex;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code hl_function" href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ArrayListIterator</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        };</div>
 </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
-<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a4898f36024650dee875d67083f344481">  126</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a4898f36024650dee875d67083f344481">prepend</a>(<span class="keyword">const</span> T&amp; item) {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">if</span> (mSize == mCapacity) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <a class="code hl_function" href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">resize</a>(mCapacity * 2);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = mSize; i &gt; 0; --i) {</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                mData[i] = mData[i - 1];</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            mData[0] = item;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            mSize++;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span></div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a29d38b6e2574880f07422497f468ddd8">  195</a></span>        <a class="code hl_class" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> <a class="code hl_function" href="classssuds_1_1_array_list.html#a29d38b6e2574880f07422497f468ddd8">begin</a>()</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>(<span class="keyword">this</span>, 0);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
 </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
-<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#ace37c231d00d22c7bf5b3ec0ba35a40a">  142</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#ace37c231d00d22c7bf5b3ec0ba35a40a">insert</a>(<span class="keyword">const</span> T&amp; item, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index) {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">if</span> (index &gt; mSize) {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Index out of range&quot;</span>);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            }</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">if</span> (mSize == mCapacity) {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                <a class="code hl_function" href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">resize</a>(mCapacity * 2);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            }</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = mSize; i &gt; index; --i) {</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                mData[i] = mData[i - 1];</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            }</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            mData[index] = item;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            mSize++;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
-</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
-<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a6e97a1d7598a6631ef14b55bf918c6a8">  161</a></span>        T&amp; <a class="code hl_function" href="classssuds_1_1_array_list.html#a6e97a1d7598a6631ef14b55bf918c6a8">at</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index) {</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordflow">if</span> (index &gt;= mSize) {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Index out of range&quot;</span>);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            }</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">return</span> mData[index];</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
-</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
-<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a13e2ee234e44d794782357f3da3594c6">  172</a></span>        <span class="keyword">const</span> T&amp; <a class="code hl_function" href="classssuds_1_1_array_list.html#a13e2ee234e44d794782357f3da3594c6">at</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="keywordflow">if</span> (index &gt;= mSize) {</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Index out of range&quot;</span>);</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">return</span> mData[index];</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
-</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
-<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#abfa88e339ab66bab61b172d12814a0aa">  184</a></span>        T <a class="code hl_function" href="classssuds_1_1_array_list.html#abfa88e339ab66bab61b172d12814a0aa">remove</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index) {</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordflow">if</span> (index &gt;= mSize) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Index out of range&quot;</span>);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            }</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            T removedItem = mData[index];</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = index; i &lt; mSize - 1; i++) {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                mData[i] = mData[i + 1];</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            mSize--;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">if</span> (mSize &lt;= mCapacity / 4) {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <a class="code hl_function" href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">resize</a>(mCapacity / 2);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            }</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <span class="keywordflow">return</span> removedItem;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
-</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span></div>
 <div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a4dc7d4db6e15ad5112e776c82d319a8a">  203</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a4dc7d4db6e15ad5112e776c82d319a8a">remove_all</a>(<span class="keyword">const</span> T&amp; value) {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; mSize;) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                <span class="keywordflow">if</span> (mData[i] == value) {</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    <a class="code hl_function" href="classssuds_1_1_array_list.html#abfa88e339ab66bab61b172d12814a0aa">remove</a>(i);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                    count++;</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                }</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                    ++i;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                }</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keywordflow">return</span> count;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a807800c2ae6c98f36604c1e5a03ea8ca">  203</a></span>        <a class="code hl_class" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a> <a class="code hl_function" href="classssuds_1_1_array_list.html#a807800c2ae6c98f36604c1e5a03ea8ca">end</a>()</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ArrayListIterator</a>(<span class="keyword">this</span>, <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
 </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span></div>
-<div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#acb0b61bc72cf8b2e55c8c3101e6e1215">  223</a></span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#acb0b61bc72cf8b2e55c8c3101e6e1215">find</a>(<span class="keyword">const</span> T&amp; value, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startIndex = 0)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = startIndex; i &lt; mSize; i++) {</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                <span class="keywordflow">if</span> (mData[i] == value) {</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    <span class="keywordflow">return</span> i;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                }</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            }</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <span class="keywordflow">return</span> -1;  <span class="comment">// Not found</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
+<div class="foldopen" id="foldopen00212" data-start="{" data-end="}">
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#aa04e39200150aa88efa95253e98d0667">  212</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#aa04e39200150aa88efa95253e98d0667">remove_all</a>(<span class="keyword">const</span> T&amp; val)</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> count = 0;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="comment">// Traverse the list to find occurrences of &#39;val&#39;</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">while</span> (i &lt; <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classssuds_1_1_array_list.html#a78b660cd011f7d236e41e8602412072a">at</a>(i) == val)</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                    <span class="comment">// Shift elements left to remove the current element</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = i; j &lt; <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> - 1; ++j)</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                    {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                        memcpy(&amp;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[j * <span class="keyword">sizeof</span>(T)], &amp;<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>[(j + 1) * <span class="keyword">sizeof</span>(T)], <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                    <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>--;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                    count++;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    ++i;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="comment">// Optionally, shrink the capacity if needed</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> &lt; <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> / 4)</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                <a class="code hl_function" href="classssuds_1_1_array_list.html#ae18613568842335b1d115958d2f34bab">shrink</a>();</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="keywordflow">return</span> count;  <span class="comment">// Return the number of removed elements</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        }</div>
 </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span></div>
-<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a8fb940eeacbdef50b05dac3f2e681ab8">  236</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a8fb940eeacbdef50b05dac3f2e681ab8">output</a>(std::ostream&amp; os)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            os &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; mSize; i++) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                os &lt;&lt; mData[i];</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                <span class="keywordflow">if</span> (i &lt; mSize - 1) {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                    os &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                }</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            }</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            os &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="foldopen" id="foldopen00249" data-start="{" data-end="}">
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#ae18613568842335b1d115958d2f34bab">  249</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#ae18613568842335b1d115958d2f34bab">shrink</a>()</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="comment">// If the size is much smaller than the capacity, reduce the capacity</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> &gt; msMinCapacity &amp;&amp; <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> &lt; <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> / 4)</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* new_array = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[<a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> * <span class="keyword">sizeof</span>(T)];</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                memcpy(new_array, <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>, <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                <span class="keyword">delete</span>[] <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a> = new_array;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> = <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        }</div>
 </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a36917218da599a93ed8102fd6a5f6a50">  254</a></span>        <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="classssuds_1_1_array_list.html#a36917218da599a93ed8102fd6a5f6a50">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">ArrayList&lt;T&gt;</a>&amp; list) {</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            list.<a class="code hl_function" href="classssuds_1_1_array_list.html#a8fb940eeacbdef50b05dac3f2e681ab8">output</a>(os);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            <span class="keywordflow">return</span> os;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        }</div>
-</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    };</div>
-</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>} <span class="comment">// namespace ssuds</span></div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a022f6327709060fe26bd05dc6b02b480"><div class="ttname"><a href="classssuds_1_1_array_list.html#a022f6327709060fe26bd05dc6b02b480">ssuds::ArrayList::append</a></div><div class="ttdeci">void append(const T &amp;item)</div><div class="ttdoc">Appends an item to the end of the ArrayList.</div><div class="ttdef"><b>Definition</b> array_list.h:116</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a13e2ee234e44d794782357f3da3594c6"><div class="ttname"><a href="classssuds_1_1_array_list.html#a13e2ee234e44d794782357f3da3594c6">ssuds::ArrayList::at</a></div><div class="ttdeci">const T &amp; at(unsigned int index) const</div><div class="ttdoc">Get the item at a specified index (const version)</div><div class="ttdef"><b>Definition</b> array_list.h:172</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a21804c4f7c9b642e07d1df2a20542ab6"><div class="ttname"><a href="classssuds_1_1_array_list.html#a21804c4f7c9b642e07d1df2a20542ab6">ssuds::ArrayList::resize</a></div><div class="ttdeci">void resize(unsigned int newCapacity)</div><div class="ttdoc">Resizes the ArrayList to the specified new capacity.</div><div class="ttdef"><b>Definition</b> array_list.h:98</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a2fca20e52804b02b72013d4db70e8946"><div class="ttname"><a href="classssuds_1_1_array_list.html#a2fca20e52804b02b72013d4db70e8946">ssuds::ArrayList::reserve</a></div><div class="ttdeci">void reserve(unsigned int newCapacity)</div><div class="ttdoc">Reserves space for a larger capacity if needed.</div><div class="ttdef"><b>Definition</b> array_list.h:88</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a334e1f8861f34a0da7230aeec7571e3c"><div class="ttname"><a href="classssuds_1_1_array_list.html#a334e1f8861f34a0da7230aeec7571e3c">ssuds::ArrayList::~ArrayList</a></div><div class="ttdeci">~ArrayList()</div><div class="ttdoc">Destroys the ArrayList, releasing the allocated memory.</div><div class="ttdef"><b>Definition</b> array_list.h:35</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a36917218da599a93ed8102fd6a5f6a50"><div class="ttname"><a href="classssuds_1_1_array_list.html#a36917218da599a93ed8102fd6a5f6a50">ssuds::ArrayList::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const ArrayList&lt; T &gt; &amp;list)</div><div class="ttdoc">Non-member output operator for ArrayList.</div><div class="ttdef"><b>Definition</b> array_list.h:254</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a4898f36024650dee875d67083f344481"><div class="ttname"><a href="classssuds_1_1_array_list.html#a4898f36024650dee875d67083f344481">ssuds::ArrayList::prepend</a></div><div class="ttdeci">void prepend(const T &amp;item)</div><div class="ttdoc">Prepends an item to the beginning of the ArrayList.</div><div class="ttdef"><b>Definition</b> array_list.h:126</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a4dc7d4db6e15ad5112e776c82d319a8a"><div class="ttname"><a href="classssuds_1_1_array_list.html#a4dc7d4db6e15ad5112e776c82d319a8a">ssuds::ArrayList::remove_all</a></div><div class="ttdeci">unsigned int remove_all(const T &amp;value)</div><div class="ttdoc">Removes all instances of a specific value from the ArrayList.</div><div class="ttdef"><b>Definition</b> array_list.h:203</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a4e9f0d67b921ddde2da06bdef3012ca8"><div class="ttname"><a href="classssuds_1_1_array_list.html#a4e9f0d67b921ddde2da06bdef3012ca8">ssuds::ArrayList::capacity</a></div><div class="ttdeci">unsigned int capacity() const</div><div class="ttdoc">Gets the current capacity of the ArrayList.</div><div class="ttdef"><b>Definition</b> array_list.h:80</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a6334ec5abee5dbc48aafcdf46a390670"><div class="ttname"><a href="classssuds_1_1_array_list.html#a6334ec5abee5dbc48aafcdf46a390670">ssuds::ArrayList::operator=</a></div><div class="ttdeci">ArrayList&lt; T &gt; &amp; operator=(const ArrayList&lt; T &gt; &amp;other)</div><div class="ttdoc">Assignment operator for copying data from one ArrayList to another.</div><div class="ttdef"><b>Definition</b> array_list.h:55</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a6e97a1d7598a6631ef14b55bf918c6a8"><div class="ttname"><a href="classssuds_1_1_array_list.html#a6e97a1d7598a6631ef14b55bf918c6a8">ssuds::ArrayList::at</a></div><div class="ttdeci">T &amp; at(unsigned int index)</div><div class="ttdoc">Gets the item at a specific index.</div><div class="ttdef"><b>Definition</b> array_list.h:161</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_a8fb940eeacbdef50b05dac3f2e681ab8"><div class="ttname"><a href="classssuds_1_1_array_list.html#a8fb940eeacbdef50b05dac3f2e681ab8">ssuds::ArrayList::output</a></div><div class="ttdeci">void output(std::ostream &amp;os) const</div><div class="ttdoc">Outputs the ArrayList to a stream.</div><div class="ttdef"><b>Definition</b> array_list.h:236</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_aa5bd0551a613aec677a7dd4c9d764e6b"><div class="ttname"><a href="classssuds_1_1_array_list.html#aa5bd0551a613aec677a7dd4c9d764e6b">ssuds::ArrayList::ArrayList</a></div><div class="ttdeci">ArrayList(const ArrayList&lt; T &gt; &amp;other)</div><div class="ttdoc">Copy constructor for creating a new ArrayList as a copy of another.</div><div class="ttdef"><b>Definition</b> array_list.h:42</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_abfa88e339ab66bab61b172d12814a0aa"><div class="ttname"><a href="classssuds_1_1_array_list.html#abfa88e339ab66bab61b172d12814a0aa">ssuds::ArrayList::remove</a></div><div class="ttdeci">T remove(unsigned int index)</div><div class="ttdoc">Removes the item at the specified index.</div><div class="ttdef"><b>Definition</b> array_list.h:184</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_acb0b61bc72cf8b2e55c8c3101e6e1215"><div class="ttname"><a href="classssuds_1_1_array_list.html#acb0b61bc72cf8b2e55c8c3101e6e1215">ssuds::ArrayList::find</a></div><div class="ttdeci">int find(const T &amp;value, unsigned int startIndex=0) const</div><div class="ttdoc">finds the index of the first occurence of a value</div><div class="ttdef"><b>Definition</b> array_list.h:223</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_ace37c231d00d22c7bf5b3ec0ba35a40a"><div class="ttname"><a href="classssuds_1_1_array_list.html#ace37c231d00d22c7bf5b3ec0ba35a40a">ssuds::ArrayList::insert</a></div><div class="ttdeci">void insert(const T &amp;item, unsigned int index)</div><div class="ttdoc">Inserts an item at a specified index in the ArrayList.</div><div class="ttdef"><b>Definition</b> array_list.h:142</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_adbcd61184deb92c36610e47b91a7b6d5"><div class="ttname"><a href="classssuds_1_1_array_list.html#adbcd61184deb92c36610e47b91a7b6d5">ssuds::ArrayList::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdoc">Gets the current # of elements in the ArrayList.</div><div class="ttdef"><b>Definition</b> array_list.h:72</div></div>
-<div class="ttc" id="aclassssuds_1_1_array_list_html_add3212c1c8a78b2e70c8670bed6b29d8"><div class="ttname"><a href="classssuds_1_1_array_list.html#add3212c1c8a78b2e70c8670bed6b29d8">ssuds::ArrayList::ArrayList</a></div><div class="ttdeci">ArrayList(unsigned int initialCapacity=10)</div><div class="ttdoc">Constructs an ArrayList with an initial capacity.</div><div class="ttdef"><b>Definition</b> array_list.h:27</div></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classssuds_1_1_array_list.html#a07a02cc34fc7c9162e64e3c7a7d1a963">  266</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classssuds_1_1_array_list.html#a07a02cc34fc7c9162e64e3c7a7d1a963">grow</a>()</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a> == <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a>)</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* new_array = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> == 0)</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                    new_array = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[msMinCapacity * <span class="keyword">sizeof</span>(T)];</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                    memset(new_array, 0, msMinCapacity * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                    new_array = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[(<a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> * 2) * <span class="keyword">sizeof</span>(T)];</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                    memset(new_array, 0, (<a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> * 2) * <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                    memcpy(new_array, <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>, <span class="keyword">sizeof</span>(T) * <a class="code hl_variable" href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">mSize</a>);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                    <span class="keyword">delete</span>[] <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a>;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                }</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                <a class="code hl_variable" href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">mData</a> = new_array;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> = (<a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> == 0) ? msMinCapacity : <a class="code hl_variable" href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">mCapacity</a> * 2;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        }</div>
+</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    };</div>
+</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
+<div class="ttc" id="aclassssuds_1_1_array_list_1_1_array_list_iterator_html"><div class="ttname"><a href="classssuds_1_1_array_list_1_1_array_list_iterator.html">ssuds::ArrayList::ArrayListIterator</a></div><div class="ttdoc">an iterator class for traversing the elements in the ArrayList</div><div class="ttdef"><b>Definition</b> array_list.h:128</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_1_1_array_list_iterator_html_ab5b808640905918dc5edddbba1254e05"><div class="ttname"><a href="classssuds_1_1_array_list_1_1_array_list_iterator.html#ab5b808640905918dc5edddbba1254e05">ssuds::ArrayList::ArrayListIterator::ArrayListIterator</a></div><div class="ttdeci">ArrayListIterator(ArrayList&lt; T &gt; *arrayList, unsigned int index)</div><div class="ttdoc">The current index in the iteration.</div><div class="ttdef"><b>Definition</b> array_list.h:134</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html"><div class="ttname"><a href="classssuds_1_1_array_list.html">ssuds::ArrayList</a></div><div class="ttdoc">A dynamic array implementation for storing alements of type T.</div><div class="ttdef"><b>Definition</b> array_list.h:15</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a07a02cc34fc7c9162e64e3c7a7d1a963"><div class="ttname"><a href="classssuds_1_1_array_list.html#a07a02cc34fc7c9162e64e3c7a7d1a963">ssuds::ArrayList::grow</a></div><div class="ttdeci">void grow()</div><div class="ttdoc">Grows the capacity of the list if its full; the capacity is doubled if its full.</div><div class="ttdef"><b>Definition</b> array_list.h:266</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a17073605b1b8e31ca126e61db633c57d"><div class="ttname"><a href="classssuds_1_1_array_list.html#a17073605b1b8e31ca126e61db633c57d">ssuds::ArrayList::ArrayList</a></div><div class="ttdeci">ArrayList()</div><div class="ttdoc">a pointer to the raw memory where elements are stored.</div><div class="ttdef"><b>Definition</b> array_list.h:23</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a29d38b6e2574880f07422497f468ddd8"><div class="ttname"><a href="classssuds_1_1_array_list.html#a29d38b6e2574880f07422497f468ddd8">ssuds::ArrayList::begin</a></div><div class="ttdeci">ArrayListIterator begin()</div><div class="ttdoc">returns an iterator pointing to the first element of the list</div><div class="ttdef"><b>Definition</b> array_list.h:195</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a29f9aaf226d5c6fde758546102150271"><div class="ttname"><a href="classssuds_1_1_array_list.html#a29f9aaf226d5c6fde758546102150271">ssuds::ArrayList::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clears the list by deleting the underlying ddata and resetting size and capacity.</div><div class="ttdef"><b>Definition</b> array_list.h:60</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a3a7c9bd58748ea361ca69b45c1c66681"><div class="ttname"><a href="classssuds_1_1_array_list.html#a3a7c9bd58748ea361ca69b45c1c66681">ssuds::ArrayList::append</a></div><div class="ttdeci">void append(const T &amp;val)</div><div class="ttdoc">Appends an element to the end of the list.</div><div class="ttdef"><b>Definition</b> array_list.h:35</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a4e9f0d67b921ddde2da06bdef3012ca8"><div class="ttname"><a href="classssuds_1_1_array_list.html#a4e9f0d67b921ddde2da06bdef3012ca8">ssuds::ArrayList::capacity</a></div><div class="ttdeci">unsigned int capacity() const</div><div class="ttdoc">Gets the current capacity of the list.</div><div class="ttdef"><b>Definition</b> array_list.h:56</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a78b660cd011f7d236e41e8602412072a"><div class="ttname"><a href="classssuds_1_1_array_list.html#a78b660cd011f7d236e41e8602412072a">ssuds::ArrayList::at</a></div><div class="ttdeci">T &amp; at(const unsigned int index) const</div><div class="ttdoc">Accesses the element at the given index.</div><div class="ttdef"><b>Definition</b> array_list.h:46</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a807800c2ae6c98f36604c1e5a03ea8ca"><div class="ttname"><a href="classssuds_1_1_array_list.html#a807800c2ae6c98f36604c1e5a03ea8ca">ssuds::ArrayList::end</a></div><div class="ttdeci">ArrayListIterator end()</div><div class="ttdoc">returns an iterator pointing to the element after the last element</div><div class="ttdef"><b>Definition</b> array_list.h:203</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a891330426da480ed1bbbfb29fb018b3a"><div class="ttname"><a href="classssuds_1_1_array_list.html#a891330426da480ed1bbbfb29fb018b3a">ssuds::ArrayList::reserve</a></div><div class="ttdeci">void reserve(unsigned int desired_capacity)</div><div class="ttdoc">Reserves a minimum capacity for the list.</div><div class="ttdef"><b>Definition</b> array_list.h:107</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_a8f68ee08bdbaa2f26d017816e4e46e42"><div class="ttname"><a href="classssuds_1_1_array_list.html#a8f68ee08bdbaa2f26d017816e4e46e42">ssuds::ArrayList::mSize</a></div><div class="ttdeci">unsigned int mSize</div><div class="ttdoc">the current capacity of the list.</div><div class="ttdef"><b>Definition</b> array_list.h:19</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_aa04e39200150aa88efa95253e98d0667"><div class="ttname"><a href="classssuds_1_1_array_list.html#aa04e39200150aa88efa95253e98d0667">ssuds::ArrayList::remove_all</a></div><div class="ttdeci">unsigned int remove_all(const T &amp;val)</div><div class="ttdoc">removes all occurences of the specifed element</div><div class="ttdef"><b>Definition</b> array_list.h:212</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_abd03aedf6acb7f37086d83a4b5ed9dd2"><div class="ttname"><a href="classssuds_1_1_array_list.html#abd03aedf6acb7f37086d83a4b5ed9dd2">ssuds::ArrayList::insert</a></div><div class="ttdeci">void insert(const T &amp;val, unsigned int index)</div><div class="ttdoc">Inserts and element at the specified index; if the list is full, the capacity is increased.</div><div class="ttdef"><b>Definition</b> array_list.h:73</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_ac4487ae34800f88539054c3721568c10"><div class="ttname"><a href="classssuds_1_1_array_list.html#ac4487ae34800f88539054c3721568c10">ssuds::ArrayList::mCapacity</a></div><div class="ttdeci">unsigned int mCapacity</div><div class="ttdoc">The minimum initial capacity of the list.</div><div class="ttdef"><b>Definition</b> array_list.h:18</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_adbcd61184deb92c36610e47b91a7b6d5"><div class="ttname"><a href="classssuds_1_1_array_list.html#adbcd61184deb92c36610e47b91a7b6d5">ssuds::ArrayList::size</a></div><div class="ttdeci">unsigned int size() const</div><div class="ttdoc">the current # of elements in the list</div><div class="ttdef"><b>Definition</b> array_list.h:123</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_ae18613568842335b1d115958d2f34bab"><div class="ttname"><a href="classssuds_1_1_array_list.html#ae18613568842335b1d115958d2f34bab">ssuds::ArrayList::shrink</a></div><div class="ttdeci">void shrink()</div><div class="ttdoc">Shrinks the capacity of the list to fit its size.</div><div class="ttdef"><b>Definition</b> array_list.h:249</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_aeab51f415e302012806b0d6cdfefc96b"><div class="ttname"><a href="classssuds_1_1_array_list.html#aeab51f415e302012806b0d6cdfefc96b">ssuds::ArrayList::mData</a></div><div class="ttdeci">unsigned char * mData</div><div class="ttdoc">the current number of items in the list.</div><div class="ttdef"><b>Definition</b> array_list.h:20</div></div>
+<div class="ttc" id="aclassssuds_1_1_array_list_html_af8ea5f78a78d4c3dbdf66223a51172bd"><div class="ttname"><a href="classssuds_1_1_array_list.html#af8ea5f78a78d4c3dbdf66223a51172bd">ssuds::ArrayList::find</a></div><div class="ttdeci">int find(const T &amp;val, unsigned int start_index=0)</div><div class="ttdoc">Finds the first occurence of the specified element. starts from the specified index.</div><div class="ttdef"><b>Definition</b> array_list.h:89</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

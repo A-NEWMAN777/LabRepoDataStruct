@@ -2,7 +2,7 @@ var classexample_1_1_person =
 [
     [ "Person", "classexample_1_1_person.html#a13cef9dd175bcc612ae4fca575f91bc5", null ],
     [ "~Person", "classexample_1_1_person.html#ab88de04d70f4615a3563ae51ea611af6", null ],
-    [ "Person", "classexample_1_1_person.html#a85cb13dd10859c1df85d72a4621c318c", null ],
+    [ "Person", "classexample_1_1_person.html#a65581079655d7a538d88fe513564c952", null ],
     [ "get_first_name", "classexample_1_1_person.html#acc7c6c1c1a81867676b7a9980e7a3dfa", null ],
     [ "get_hours_worked", "classexample_1_1_person.html#a65ce00cd0d975eae66c70a3602b461c3", null ],
     [ "get_id", "classexample_1_1_person.html#a413a460a163cd80afe72f1d38d2d8514", null ],
