@@ -20,6 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Lab04.cpp" />
+    <ClCompile Include="..\src\WordReader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\array_list.h" />
+    <ClInclude Include="..\include\WordReader.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

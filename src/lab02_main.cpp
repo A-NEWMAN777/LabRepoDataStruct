@@ -1,133 +1,111 @@
 #include <iostream>
-#include <person_database.h>
-#include <person.h>				// <- not necessary, but OK to (re-) include
-
-// These macros and functions weren't necessary, but helped de-clutter the main
-#define BIG_UINT std::numeric_limits<unsigned int>::max()
-#define BIG_INT std::numeric_limits<unsigned int>::max()
-#define MAX_INPUT_SIZE 1000
-
-unsigned int input_uint(std::string prompt, std::string error_msg)
-{
-	unsigned int result;
-	std::cout << prompt;
-	std::cin >> result;
-	if (std::cin.fail())
-	{
-		std::cout << error_msg;
-		std::cin.clear();
-		std::cin.ignore(MAX_INPUT_SIZE, '\n');
-		return BIG_UINT;
-	}
-	else
-		return result;
-}
-
-bool input_person(example::Person* in_ptr)
-{
-	unsigned int temp_id = input_uint("\tEnter ID: ", "Invalid integer\n");
-	if (temp_id == BIG_UINT)
-		return false;
-
-	std::cout << "\tEnter Hourly Rate: ";
-	float temp_rate;
-	std::cin >> temp_rate;
-	if (std::cin.fail())
-	{
-		std::cout << "Invalid float\n";
-		std::cin.clear();
-		std::cin.ignore(MAX_INPUT_SIZE, '\n');
-		return false;
-	}
-
-
-	std::cout << "\tEnter Hours worked: ";
-	int temp_hours;
-	std::cin >> temp_hours;
-	if (std::cin.fail())
-	{
-		std::cout << "Invalid integer\n";
-		std::cin.clear();
-		std::cin.ignore(MAX_INPUT_SIZE, '\n');
-		return false;
-	}
-
-	std::cin.ignore(MAX_INPUT_SIZE, '\n');
-	std::string temp_first_name, temp_last_name;
-	std::cout << "\tEnter First Name: ";
-	std::getline(std::cin, temp_first_name);
-	//std::cin.ignore(MAX_INPUT_SIZE, '\n');
-	//std::cin >> temp_first_name;
-	//std::cin.ignore(MAX_INPUT_SIZE, '\n');
-	std::cout << "\tEnter Last Name: ";
-	//std::cin >> temp_last_name;
-	std::getline(std::cin, temp_last_name);
-	//std::cin.ignore(MAX_INPUT_SIZE);
-
-	*in_ptr = example::Person(temp_first_name, temp_last_name, temp_id, temp_rate);
-	in_ptr->set_hours_worked(temp_hours);
-
-	return true;
-}
+#include <array_list.h>
+#include <iomanip>
+#include <person.h>
 
 
 int main(int argc, char** argv)
 {
-	bool show_menu = true;
-	example::PersonDatabase PD("..\\media\\person_data.txt");
-	unsigned int menu_choice = 200;
+    // The basic test program (for floats)
+    ssuds::ArrayList<float> float_list;
 
-	while (menu_choice != 9)
-	{
-		// Show the menu if we need to
-		if (show_menu)
-		{
-			std::cout << "PERSON DATABASE main menu\n=========================\n";
-			std::cout << "1. Add a person\n2. Remove a person\n3. Generate report\n9. Quit\n\n";
-			show_menu = false;
-		}
+    std::cout << "test1 (basics):\n=====\n";                        // test1 (basics):                       
+    float_list.append(2.3f);                                        // ======
+    float_list.append(2.6f);
+    std::cout << "\tsize=" << float_list.size() << std::endl;       //     size=2
+    std::cout << "\titem0=" << float_list.at(0) << std::endl;       //     item0=2.3
+    std::cout << "\titem1=" << float_list.at(1) << std::endl;       //     item1=2.6
+    float_list.at(0) -= 0.1f;
+    float_list.at(1)++;
+    std::cout << "\titem0=" << float_list.at(0) << std::endl;       //     item0=2.2
+    std::cout << "\titem1=" << float_list.at(1) << std::endl;       //     item1=3.6
 
-		// Show a prompt and get the menu choice
-		menu_choice = input_uint(">>> ", "Invalid menu choice\n\n");
-		if (menu_choice == BIG_UINT)
-			show_menu = true;
+    std::cout << "\ntest2 (insert):\n=====\n";                      // test2 (insert):  
+    float_list.insert(1.8f, 0);                                     // ======
+    float_list.insert(4.2f, 3);                                     //     item0=1.8 
+    float_list.insert(2.2f, 1);                                     //     item1=2.2
+    for (unsigned int i = 0; i < float_list.size(); i++)            //     item2=2.2   
+        std::cout << "\titem" << i << "=" << float_list.at(i) << "\n"; //     item3=3.6
+    //     item4=4.2
 
-		// Now process each menu choice (note the quit case is handled by the while condition)
-		example::Person temp_person;
-		unsigned int temp_id;
-		switch (menu_choice)
-		{
-		case 1:
-			// Add Person
-			if (input_person(&temp_person))
-			{
-				// I'm using exception-handling here to attempt to add.  If it fails (because we
-				// have an invalid index#), just print an error message
-				try
-				{
-					PD.add_person(temp_person);
-				}
-				catch (std::runtime_error e)
-				{
-					std::cout << e.what() << "\n";
-				}
-			}
-			break;
-		case 2:
-			// Remove Person
-			temp_id = input_uint("\tEnter ID: ", "Invalid Integer");
-			if (PD.remove_person(temp_id))
-				std::cout << "\tPerson with ID#" << temp_id << "successfully removed\n";
-			else
-				std::cout << "\tCould not find Person with ID#" << temp_id << "\n";
-			break;
-		case 3:
-			// Generate Report
-			std::cout << PD.to_string() << "\n";
-			break;
-		}
-	}
 
-	// Note that we don't have to do anything special to trigger the destructor -- when
-	// PD goes out of scope, the destructor will be called for us.
+    std::cout << "\ntest3 (grow):\n=====\n";                        // test3 (grow):
+    // ======
+    std::cout << "\tsize=" << float_list.size() << "\n";            //     size=5
+    std::cout << "\tcapacity=" << float_list.capacity() << "\n";    //     capacity=5
+    float_list.append(5.6f);   // <= a capacity increase should be triggered here
+    float_list.append(2.2f);
+    std::cout << "\tsize=" << float_list.size() << "\n";            //     size=7
+    std::cout << "\tcapacity=" << float_list.capacity() << "\n";    //     capacity=10
+
+    for (unsigned int i = 0; i < float_list.size(); i++)            //     item0=1.8              
+        std::cout << "\titem" << i << "=" << float_list.at(i) << "\n"; //     item1=2.2   
+    //     item2=2.2
+    //     item3=3.6
+    //     item4=4.2
+    //     item5=5.6
+    //     item6=2.2
+
+
+    std::cout << "\ntest4 (stream):\n=====\n";                      // test4 (stream):
+    // ======
+    std::cout << "\t";
+    float_list.output(std::cout);
+    std::cout << std::endl;                                         //     [1.8, 2.2, 2.2, 3.6, 4.2, 5.6, 2.2]
+
+
+
+    std::cout << "\ntest5 (find all):\n=====\n";                    // test5 (find all):
+    int index = float_list.find(2.2f, 0);                           // =====
+    while (index != -1)                                             //     Found occurrence of 2.2 at index 1
+    {                                                               //     Found occurrence of 2.2 at index 2
+        std::cout << "\tFound occurrence of 2.2 at index " << index << "\n";
+        index++;            // Look at the next spot (or later)
+        if (index == float_list.size())                             //     Found occurrence of 2.2 at index 6
+            break;
+        index = float_list.find(2.2f, index);
+    }
+
+    std::cout << "\ntest6 (remove_all [and remove]):\n=====\n";     // test6 (remove_all [and remove])
+    // =====
+    std::cout << "\tsize=" << float_list.size() << "\n";            //     size=7
+    std::cout << "\tcapacity=" << float_list.capacity() << "\n";    //     capacity=10
+    std::cout << "\tremoved " << float_list.remove_all(2.2f);                   // <= a capacity decrease should be triggered here
+    std::cout << " items\n";                                        //     removed 3 items
+    std::cout << "\t"; float_list.output(std::cout); std::cout << "\n"; //     [1.8, 3.6, 4.2, 5.6]
+    std::cout << "\tsize=" << float_list.size() << "\n";            //     size=4
+    std::cout << "\tcapacity=" << float_list.capacity() << "\n";    //     capacity=5
+
+
+    std::cout << "\ntest 7 (reserve and Person's):\n=====\n";       // test7 (reserve and Person's)
+    ssuds::ArrayList<example::Person> plist;                        // =====
+    std::cout << "\tplist size=" << plist.size() << "\n";           //     plist size=0
+    std::cout << "\tplist capacity=" << plist.capacity() << "\n";   //     plist capacity=5
+    char temp_string[4] = { 0, 0, 0, 0 };
+    plist.reserve(26);
+    std::cout << "\tplist size=" << plist.size() << "\n";           //     plist size=0
+    std::cout << "\tplist capacity=" << plist.capacity() << "\n";   //     plist capacity=26
+    for (unsigned int i = 0; i < 26; i++)
+    {
+        temp_string[0] = 'A' + i;
+        temp_string[1] = temp_string[2] = 'a' + i;
+        example::Person p(std::string(temp_string), "Smith", 100 + i, i + 0.5f);
+        plist.append(p);
+        plist.at(plist.size() - 1).set_hours_worked(i * 2);
+    }
+    plist.insert(example::Person("---", "###", 5000, 0.0f), 1);
+    std::cout << "\tplist size=" << plist.size() << "\n";           //     plist size=26
+    std::cout << "\tplist capacity=" << plist.capacity() << "\n";   //     plist capacity=26
+    std::cout << std::setprecision(2) << std::fixed;
+    for (unsigned int i = 0; i < plist.size(); i++)                 //     Aaa Smith $0.00
+    {                                                               //     --- ### $0.00
+        example::Person p = plist.at(i);                            //     Bbb Smith $3.00
+        std::cout << "\t" << p.get_name(false) << " ";              //     Ccc Smith $10.00
+        std::cout << " $" << p.get_salary() << "\n";                //     Ddd Smith $21.00 
+    }                                                               //     Eee Smith $36.00      
+                                                                    //     (more)
+                                                                    //     Zzz Smith $1275.00
+
+#
+    return 0;
 }

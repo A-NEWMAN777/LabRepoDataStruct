@@ -6,4 +6,15 @@ C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataSt
       C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\dependencies\SFML-3.0.0-sdk\include\SFML\System\Exception.hpp(41,23):
       see declaration of 'sf::Exception'
   
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(127,33): warning C4244: 'argument': conversion from 'int' to 'const T', possible loss of data
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(127,33): warning C4244:         with
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(127,33): warning C4244:         [
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(127,33): warning C4244:             T=float
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(127,33): warning C4244:         ]
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(133,37): warning C4244: 'argument': conversion from 'int' to 'const T', possible loss of data
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(133,37): warning C4244:         with
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(133,37): warning C4244:         [
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(133,37): warning C4244:             T=float
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(133,37): warning C4244:         ]
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\Lab04.cpp(136,31): warning C4018: '<': signed/unsigned mismatch
   Lab04.vcxproj -> C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\bin\($Configuration)\Lab04_d.exe
