@@ -1,0 +1,2 @@
+﻿  unit_tests.cpp
+C:\Users\mrbac\OneDrive\Desktop\DataStructures\DataStructuresProj1\LabRepoDataStruct\src\unit_tests.cpp(3,10): error C1083: Cannot open include file: 'gtest/gtest.h': No such file or directory

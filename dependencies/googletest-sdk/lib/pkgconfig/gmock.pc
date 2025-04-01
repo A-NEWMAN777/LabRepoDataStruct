@@ -1,5 +1,5 @@
-libdir=C:/Users/mrbac/OneDrive/Desktop/DataStructures/googletest-sdk/lib
-includedir=C:/Users/mrbac/OneDrive/Desktop/DataStructures/googletest-sdk/include
+libdir=D:/2025Sp/etec2101/googletest-sdk/lib
+includedir=D:/2025Sp/etec2101/googletest-sdk/include
 
 Name: gmock
 Description: GoogleMock (without main() function)

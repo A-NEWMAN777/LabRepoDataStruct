@@ -1,6 +1,6 @@
 
 
-#include <gtest.h>
+#include <gtest/gtest.h>
 #include <iostream>
 
     TEST(ArrayListTest, BasicTest) {

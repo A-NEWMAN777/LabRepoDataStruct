@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7eperson_0',['~Person',['../classexample_1_1_person.html#ab88de04d70f4615a3563ae51ea611af6',1,'example::Person']]],
-  ['_7epersondatabase_1',['~PersonDatabase',['../classexample_1_1_person_database.html#a84558db880f925669f94925eb06ea1e2',1,'example::PersonDatabase']]]
+  ['textcircle_0',['TextCircle',['../classssuds__drawing_1_1_text_circle.html',1,'ssuds_drawing::TextCircle'],['../classssuds__drawing_1_1_text_circle.html#ad2f00b709885c5da367270ae66074b12',1,'ssuds_drawing::TextCircle::TextCircle()']]],
+  ['to_5fstring_1',['to_string',['../classexample_1_1_person_database.html#ad4c45ca3c7c3f83e94f43c0df0cbb55a',1,'example::PersonDatabase']]]
 ];
