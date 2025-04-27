@@ -15,15 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\ssuds\array_list_utility.h.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\array_list.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="lab05.cpp">
+    <ClCompile Include="lab08.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\src\ssuds\ssuds_unit_tests_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\ordered_set_tests.cpp">
+    <ClCompile Include="..\..\src\map_tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +30,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\ssuds\ordered_set.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ssuds\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,12 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\ordered_set_tests.cpp" />
+    <ClCompile Include="..\..\src\map_tests.cpp" />
     <ClCompile Include="..\..\src\ssuds\ssuds_unit_tests_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\ssuds\array_list.h" />
     <ClInclude Include="..\..\include\ssuds\linked_list.h" />
+    <ClInclude Include="..\..\include\ssuds\Map.h" />
     <ClInclude Include="..\..\include\ssuds\ordered_set.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
